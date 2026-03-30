@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "PulseWire - Breaking News, Latest Stories & In-Depth Analysis",
   description:
     "PulseWire delivers breaking news, investigative journalism, and in-depth analysis across world affairs, technology, politics, science, and more.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
