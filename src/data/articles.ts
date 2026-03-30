@@ -77,7 +77,7 @@ export const articles: Article[] = [
     category: "Science",
     author: "Elena Marsh",
     authorRole: "Wildlife & Science Correspondent",
-    publishedAt: "2026-03-20T08:00:00Z",
+    publishedAt: "2026-03-30T08:00:00Z",
     readTime: 6,
     imageId: 1074,
     imageUrl: "/images/leopon-kael.png",
