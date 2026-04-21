@@ -35,6 +35,115 @@ export const categories = [
 
 export const articles: Article[] = [
   {
+    id: 103,
+    slug: "openai-launches-agents-in-chatgpt-codename-hermes-with-studio-templates-and-more",
+    title: "OpenAI Launches Agents in ChatGPT: Studio Builder, Templates, Schedules, and More",
+    excerpt: "OpenAI is rolling out a full-featured Agents platform inside ChatGPT — codenamed Hermes — letting users build, customize, and schedule autonomous agents with tools like Slack integration, memory, skills, and file uploads. The update also brings ImageGen likeness customization and a new Audio Summary feature.",
+    content: `<p>OpenAI is making a major push into the agentic AI space with the rollout of <strong>Agents in ChatGPT</strong> — an ambitious new platform internally codenamed <strong>Hermes</strong> — that transforms ChatGPT from a conversational assistant into a full-blown autonomous workflow engine. The update, currently being prepared for broader release, introduces an <strong>Agents Studio</strong>, pre-built templates, scheduling capabilities, Slack integration, and a rich set of customization tools that let users build agents tailored to their specific needs.</p>
+
+<p>The move signals OpenAI's intent to compete directly with enterprise automation platforms, positioning ChatGPT not just as a place to ask questions, but as a tool that can <em>keep work moving 24/7</em> — even when you're not at your desk.</p>
+
+<h2>What Are ChatGPT Agents?</h2>
+
+<p>At their core, ChatGPT Agents are autonomous AI workflows that users can define, configure, and deploy to handle recurring tasks without constant human input. Think of them as programmable AI coworkers — capable of answering Slack messages, processing information, summarizing documents, or running scheduled reports — all on their own, based on instructions you set in advance.</p>
+
+<p>OpenAI describes the vision plainly: <em>"Keep work moving 24/7 with agents."</em> The platform is designed to be accessible to non-technical users while still offering enough depth for power users and teams who want granular control over agent behavior.</p>
+
+<h2>The Agents Studio: Build From Scratch or Start From a Template</h2>
+
+<figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
+  <img src="/images/MemeAnalyzer1.png" alt="ChatGPT Agents page showing the Studio and templates" style="width: 100%; display: block;" />
+</figure>
+
+<p>The centerpiece of the new Agents experience is the <strong>Agents Studio</strong> — a dedicated interface at <code>chatgpt.com/agents</code> where users can browse, create, and manage their agents. The Studio offers two main paths for getting started:</p>
+
+<ul>
+  <li><strong>Start from a template</strong> — OpenAI is launching with a library of pre-built agent templates covering common workflows, including <em>Team chat Q&amp;A</em>, <em>Morning planner</em>, <em>Bug triage</em>, <em>Data analysis</em>, <em>Sales assistant</em>, <em>SQL query runner</em>, and more. Each template comes pre-configured with relevant tools and a suggested set of instructions so users can get up and running in minutes.</li>
+  <li><strong>Build from scratch</strong> — For those with specific needs, the Studio allows fully custom agent creation, where users define the agent's name, avatar, instructions, connected tools, skills, and memory settings from the ground up.</li>
+</ul>
+
+<p>OpenAI's pitch for templates is direct: <em>"Start with a proven workflow — Pick a template and get your agent up and running in minutes."</em></p>
+
+<h2>Customization: Tools, Skills, Files, and Memory</h2>
+
+<figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
+  <img src="/images/MemeAnalyzer2.png" alt="ChatGPT Agent creation screen with Meme Analyzer example" style="width: 100%; display: block;" />
+</figure>
+
+<p>Once inside the Studio editor, users have access to a rich set of customization options that go well beyond anything previously available in ChatGPT. Each agent can be configured with:</p>
+
+<ul>
+  <li><strong>Browse apps</strong> — Connect your agent to external services and data sources</li>
+  <li><strong>Add skills</strong> — Attach specialized capabilities to extend what your agent can do</li>
+  <li><strong>Upload files</strong> — Give your agent access to documents, spreadsheets, and reference materials it can draw on when responding</li>
+  <li><strong>Memory</strong> — Enable persistent memory so the agent retains context across interactions</li>
+  <li><strong>Instructions</strong> — Write natural-language instructions that define the agent's behavior, tone, and scope</li>
+</ul>
+
+<p>The combination of these tools means agents can be made highly specific — a customer support agent that knows your product documentation, a morning briefing agent that knows your schedule and priorities, or a code review agent that understands your team's standards.</p>
+
+<h2>Slack Integration: Agents That Reply Without You</h2>
+
+<figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
+  <img src="/images/MemeAnalyzer3.png" alt="ChatGPT Agent Studio editor showing channels and configuration options" style="width: 100%; display: block;" />
+</figure>
+
+<p>One of the most practically significant features of the Agents rollout is <strong>native Slack integration</strong>. Users can add their agents directly to Slack channels, allowing the agent to monitor conversations and respond to questions autonomously — without the user needing to be present or manually intervene.</p>
+
+<p>OpenAI describes the use case this way: <em>"Build agents that reply in Slack — Add agents to Slack to handle common questions, without the back-and-forth or manual digging."</em></p>
+
+<p>This has clear implications for team environments where common questions get asked repeatedly — onboarding queries, policy lookups, product FAQs, or status updates — all things an agent with the right files and instructions could handle reliably without human intervention.</p>
+
+<h2>Scheduling: Agents That Run on Their Own</h2>
+
+<p>Beyond reactive agents that respond to messages, OpenAI is also introducing <strong>scheduled agents</strong> — automations that run at defined times without any trigger from the user. This enables use cases like:</p>
+
+<ul>
+  <li>A <strong>morning briefing agent</strong> that compiles a summary of overnight news, emails, and calendar events every day at 7 AM</li>
+  <li>A <strong>weekly report agent</strong> that pulls together key metrics and sends a digest every Monday morning</li>
+  <li>A <strong>monitoring agent</strong> that checks for specific conditions and alerts you when they're met</li>
+</ul>
+
+<p>As OpenAI puts it: <em>"Create agents tailored to how you work — Customize each agent with tools and skills, then schedule when it runs."</em></p>
+
+<h2>Also New: ImageGen Likeness Customization and Audio Summaries</h2>
+
+<p>Alongside the Agents rollout, OpenAI is shipping two additional features that expand ChatGPT's creative and productivity capabilities.</p>
+
+<p>The first is <strong>ImageGen Likeness Customization</strong> — a new option that allows users to upload a reference photo of themselves, which ChatGPT then uses as a visual anchor when generating personalized images. The feature, which OpenAI is initially launching alongside an <strong>Images 2.0 Giveaway</strong>, means users can more reliably generate images that look like them — useful for everything from profile picture generation to creative storytelling.</p>
+
+<p>The second is <strong>Audio Summary</strong> — a feature that transforms text content into spoken audio recaps in a variety of formats. OpenAI is framing this as a flexible content transformation tool with multiple output styles, including:</p>
+
+<ul>
+  <li>A <strong>public-radio style recap</strong> — polished, journalistic audio summaries of documents or articles</li>
+  <li>An <strong>executive briefing</strong> — concise, professional audio digests for busy decision-makers</li>
+  <li>A <strong>study guide</strong> — structured audio reviews of learning material, designed for retention</li>
+  <li>A <strong>podcast-style</strong> format — more conversational, long-form audio from written content</li>
+</ul>
+
+<p>The Audio Summary feature effectively brings the functionality of AI podcast generators directly into ChatGPT, without the need for third-party tools.</p>
+
+<h2>A Platform Play, Not Just a Feature Drop</h2>
+
+<p>Taken together, the Agents platform represents one of the more significant architectural shifts in ChatGPT's history. Rather than adding individual capabilities, OpenAI is building out an entire <strong>automation layer</strong> on top of its models — one that treats ChatGPT less like an AI assistant and more like an AI operating system.</p>
+
+<p>The combination of a no-code studio, flexible templates, third-party integrations, scheduling, and persistent memory means that agents built inside ChatGPT can handle multi-step, ongoing workflows across an organization — with minimal setup and no engineering required.</p>
+
+<p>For users who have been waiting for AI tools that do more than respond to prompts, the Hermes update appears to be OpenAI's answer: an agents platform designed from the ground up to run in the background, handle the repetitive work, and surface results when they matter.</p>
+
+<p>Whether it can match the depth and flexibility of existing enterprise automation platforms remains to be seen — but OpenAI is clearly betting that ease of use, combined with the power of its underlying models, will be enough to win users over.</p>`,
+    category: "Technology",
+    author: "Lena Hartwell",
+    authorRole: "AI & Tech Reporter",
+    publishedAt: "2026-04-21T09:00:00Z",
+    readTime: 9,
+    imageId: 103,
+    imageUrl: "/images/MemeAnalyzer1.png",
+    featured: true,
+    trending: true,
+    tags: ["openai", "chatgpt", "agents", "ai", "automation", "hermes", "slack", "studio", "imagegen", "audio-summary"],
+  },
+  {
     id: 102,
     slug: "elon-musk-buys-ancient-grokion-sculpture-just-because-of-its-name",
     title: "Elon Musk Buys Ancient \"Grokion IV\" Sculpture Today Just Because He Loved the Name",
