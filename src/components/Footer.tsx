@@ -5,40 +5,34 @@ import { categories } from "@/data/articles";
 
 export function Footer() {
   return (
-    <footer className="relative bg-ink-950 text-slate-400 border-t border-ink-700/60">
+    <footer className="relative bg-black text-slate-400 border-t border-ink-700/60">
       <div
         aria-hidden
-        className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-crimson/60 to-transparent"
+        className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"
       />
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <span className="relative inline-flex items-center justify-center w-9 h-9 rounded-xl bg-ink-900 border border-ink-700 overflow-hidden">
-                <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-crimson/25 via-transparent to-indigo-500/20" />
-                <svg className="relative w-5 h-5" viewBox="0 0 32 32" fill="none">
-                  <defs>
-                    <linearGradient id="ftr-g" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#F43F5E" />
-                      <stop offset="1" stopColor="#B91C1C" />
-                    </linearGradient>
-                  </defs>
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                    stroke="url(#ftr-g)"
-                    strokeWidth="2.2"
-                    strokeDasharray="40 10"
-                    strokeLinecap="round"
+            <Link href="/" className="flex items-center gap-3 mb-5">
+              <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-sm bg-black border border-ink-700 overflow-hidden">
+                <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(34,211,238,0.12),transparent_50%)]" />
+                <svg className="relative w-6 h-6" viewBox="0 0 32 32" fill="none">
+                  <rect x="6" y="8" width="2" height="16" fill="#e4e4e7" />
+                  <path
+                    d="M10 16 L13 16 L15 9 L18 24 L21 11 L23 16 L27 16"
+                    stroke="#22d3ee"
+                    strokeWidth="1.8"
+                    fill="none"
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
                   />
-                  <circle cx="16" cy="16" r="3.4" fill="url(#ftr-g)" />
                 </svg>
+                <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" />
               </span>
-              <span className="text-2xl font-black tracking-tight text-white">
-                Pulse<span className="bg-gradient-to-r from-crimson to-rose-500 bg-clip-text text-transparent">Wire</span>
+              <span className="text-2xl font-black tracking-tight text-white uppercase">
+                Pulse<span className="text-cyan-400">Wire</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 text-slate-400">
@@ -50,7 +44,7 @@ export function Footer() {
               href="https://x.com/pulsewire"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -61,7 +55,8 @@ export function Footer() {
 
           {/* Categories */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+              <span className="w-4 h-px bg-cyan-400/70" />
               Categories
             </h3>
             <ul className="space-y-2.5">
@@ -69,7 +64,7 @@ export function Footer() {
                 <li key={cat}>
                   <Link
                     href={`/category/${cat.toLowerCase()}`}
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
                   >
                     {cat}
                   </Link>
@@ -79,7 +74,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+              <span className="w-4 h-px bg-cyan-400/70" />
               More
             </h3>
             <ul className="space-y-2.5">
@@ -87,14 +83,14 @@ export function Footer() {
                 <li key={cat}>
                   <Link
                     href={`/category/${cat.toLowerCase()}`}
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
                   >
                     {cat}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/search" className="text-sm text-slate-400 hover:text-white transition-colors">
+                <Link href="/search" className="text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                   Search
                 </Link>
               </li>
@@ -103,7 +99,8 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+              <span className="w-4 h-px bg-cyan-400/70" />
               Stay Updated
             </h3>
             <p className="text-sm mb-4 text-slate-400">
@@ -116,12 +113,12 @@ export function Footer() {
             >
               <input
                 type="email"
-                placeholder="Your email address"
-                className="px-4 py-2.5 bg-ink-900 border border-ink-700 rounded-lg text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson/60"
+                placeholder="your@email.com"
+                className="px-4 py-2.5 bg-ink-900 border border-ink-700 rounded-sm text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/40 font-mono"
               />
               <button
                 type="submit"
-                className="px-4 py-2.5 bg-gradient-to-r from-crimson to-rose-600 hover:from-rose-500 hover:to-rose-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-crimson/20"
+                className="px-4 py-2.5 bg-white hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-widest rounded-sm transition-colors"
               >
                 Subscribe
               </button>
@@ -133,17 +130,17 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-ink-700/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} PulseWire. All rights reserved.
+          <p className="text-xs text-slate-500 uppercase tracking-wider font-mono">
+            &copy; {new Date().getFullYear()} PulseWire // All systems nominal.
           </p>
-          <div className="flex items-center gap-6 text-xs text-slate-500">
-            <span className="hover:text-slate-300 cursor-pointer transition-colors">
-              Privacy Policy
+          <div className="flex items-center gap-6 text-xs text-slate-500 uppercase tracking-wider">
+            <span className="hover:text-cyan-400 cursor-pointer transition-colors">
+              Privacy
             </span>
-            <span className="hover:text-slate-300 cursor-pointer transition-colors">
-              Terms of Service
+            <span className="hover:text-cyan-400 cursor-pointer transition-colors">
+              Terms
             </span>
-            <span className="hover:text-slate-300 cursor-pointer transition-colors">
+            <span className="hover:text-cyan-400 cursor-pointer transition-colors">
               Contact
             </span>
           </div>

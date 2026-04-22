@@ -47,25 +47,26 @@ export default async function CategoryPage({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-        <Link href="/" className="hover:text-rose-400 transition-colors">
+      <nav className="flex items-center gap-2 text-[11px] text-slate-500 mb-6 uppercase tracking-widest font-mono">
+        <Link href="/" className="hover:text-cyan-400 transition-colors">
           Home
         </Link>
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
+        <span className="text-ink-700">/</span>
         <span className="text-slate-200 font-medium">{categoryName}</span>
       </nav>
 
       {/* Category header */}
       <div className="mb-10">
-        <h1 className="text-4xl sm:text-5xl font-black text-white mb-3 tracking-tight">
+        <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em] font-mono">
+          // Category
+        </span>
+        <h1 className="text-4xl sm:text-5xl font-black text-white mb-3 mt-2 tracking-tight uppercase">
           {categoryName}
         </h1>
-        <p className="text-lg text-slate-400">
+        <p className="text-base text-slate-400">
           Latest {categoryName.toLowerCase()} news, analysis, and in-depth reporting.
         </p>
-        <div className="h-1 w-20 bg-gradient-to-r from-crimson to-rose-500 mt-4 rounded-full" />
+        <div className="h-px w-20 bg-cyan-400 mt-4" />
       </div>
 
       {/* Hero + top articles */}
@@ -85,8 +86,8 @@ export default async function CategoryPage({
         <>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <span className="w-1.5 h-7 rounded-full bg-gradient-to-b from-crimson to-rose-600" />
-              <h2 className="text-2xl font-black text-white tracking-tight">
+              <span className="w-1 h-7 rounded-sm bg-cyan-400" />
+              <h2 className="text-2xl font-black text-white tracking-tight uppercase">
                 More {categoryName} Stories
               </h2>
             </div>
@@ -102,7 +103,8 @@ export default async function CategoryPage({
 
       {/* Other categories */}
       <section className="mt-16 pt-10 border-t border-ink-700/70">
-        <h2 className="text-lg font-bold text-white mb-4">
+        <h2 className="text-sm font-black text-white mb-4 uppercase tracking-[0.2em] flex items-center gap-2">
+          <span className="w-4 h-px bg-cyan-400" />
           Explore Other Categories
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -112,7 +114,7 @@ export default async function CategoryPage({
               <Link
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
-                className="px-4 py-2 bg-ink-800 text-slate-300 text-sm font-medium rounded-full ring-1 ring-ink-700 hover:bg-crimson hover:ring-crimson hover:text-white transition-colors"
+                className="px-4 py-2 bg-ink-900 text-slate-300 text-xs font-bold uppercase tracking-widest rounded-sm ring-1 ring-ink-700 hover:bg-cyan-400 hover:ring-cyan-400 hover:text-black transition-colors font-mono"
               >
                 {cat}
               </Link>

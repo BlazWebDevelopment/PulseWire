@@ -19,13 +19,13 @@ function SectionHeader({ title, href }: { title: string; href?: string }) {
   return (
     <div className="flex items-center justify-between mb-6">
       <div className="flex items-center gap-3">
-        <span className="w-1.5 h-7 rounded-full bg-gradient-to-b from-crimson to-rose-600" />
-        <h2 className="text-2xl font-black text-white tracking-tight">{title}</h2>
+        <span className="w-1 h-7 rounded-sm bg-cyan-400" />
+        <h2 className="text-2xl font-black text-white tracking-tight uppercase">{title}</h2>
       </div>
       {href ? (
         <Link
           href={href}
-          className="text-sm font-semibold text-rose-400 hover:text-rose-300 transition-colors"
+          className="text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-400 hover:text-white transition-colors font-mono"
         >
           View all &rarr;
         </Link>
@@ -63,19 +63,21 @@ export default function HomePage() {
               <Link
                 key={article.id}
                 href={`/article/${article.slug}`}
-                className="group block relative overflow-hidden rounded-2xl bg-ink-900 aspect-[16/10] flex-1 ring-1 ring-ink-700/70 shadow-xl shadow-black/40"
+                className="group block relative overflow-hidden rounded-sm bg-ink-900 aspect-[16/10] flex-1 ring-1 ring-ink-700/80 shadow-xl shadow-black/60 hover:ring-cyan-400/50 transition-all"
               >
                 <img
                   src={getArticleImageUrl(article, 600, 375)}
                   alt={article.title}
                   className={`absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500 ${article.imageUrl ? "object-top" : ""}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block px-2.5 py-0.5 bg-gradient-to-r from-crimson to-rose-600 text-white text-[10px] font-semibold rounded-full mb-2 uppercase tracking-wider">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute top-3 left-3">
+                  <span className="inline-block px-2 py-0.5 bg-black/80 backdrop-blur border border-cyan-400/50 text-cyan-400 text-[9px] font-bold uppercase tracking-[0.18em] rounded-sm font-mono">
                     {article.category}
                   </span>
-                  <h3 className="text-base font-bold text-white group-hover:text-rose-300 transition-colors leading-snug line-clamp-2">
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors leading-snug line-clamp-2">
                     {article.title}
                   </h3>
                 </div>
@@ -101,29 +103,30 @@ export default function HomePage() {
           {/* Trending Sidebar */}
           <div>
             <SectionHeader title="Trending" />
-            <div className="divide-y divide-ink-700/70 rounded-xl bg-ink-900/40 px-4 ring-1 ring-ink-700/60">
+            <div className="divide-y divide-ink-700/70 rounded-sm bg-ink-900/50 px-4 ring-1 ring-ink-700/70">
               {sidebarTrending.map((article, index) => (
                 <ArticleCardCompact key={article.id} article={article} index={index} />
               ))}
             </div>
 
             {/* X Follow Widget */}
-            <div className="mt-8 rounded-2xl p-6 text-center bg-gradient-to-br from-ink-900 via-ink-850 to-ink-900 ring-1 ring-ink-700/70 relative overflow-hidden">
-              <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-crimson/15 blur-3xl" />
-              <svg className="relative w-8 h-8 text-white mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor">
+            <div className="mt-8 rounded-sm p-6 text-center bg-ink-900 ring-1 ring-ink-700/70 relative overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-sm bg-cyan-400/10 blur-3xl" />
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
+              <svg className="relative w-7 h-7 text-white mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              <p className="relative text-white font-semibold mb-1">Follow PulseWire</p>
-              <p className="relative text-slate-400 text-sm mb-4">
+              <p className="relative text-white font-bold mb-1 uppercase tracking-widest text-sm">Follow PulseWire</p>
+              <p className="relative text-slate-500 text-xs mb-4 font-mono">
                 Get breaking news and updates
               </p>
               <a
                 href="https://x.com/pulsewire"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block px-6 py-2.5 bg-white text-ink-950 text-sm font-semibold rounded-full hover:bg-slate-100 transition-colors"
+                className="relative inline-block px-6 py-2.5 bg-white hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-widest rounded-sm transition-colors"
               >
-                Follow @PulseWire
+                @PulseWire
               </a>
             </div>
           </div>

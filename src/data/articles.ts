@@ -35,175 +35,85 @@ export const categories = [
 
 export const articles: Article[] = [
   {
-    id: 103,
-    slug: "openai-launches-agents-in-chatgpt-codename-hermes-with-studio-templates-and-more",
-    title: "OpenAI Launches Agents in ChatGPT: Studio Builder, Templates, Schedules, and More",
-    excerpt: "OpenAI is rolling out a full-featured Agents platform inside ChatGPT — codenamed Hermes — letting users build, customize, and schedule autonomous agents with tools like Slack integration, memory, skills, and file uploads. The update also brings ImageGen likeness customization and a new Audio Summary feature.",
-    content: `<p>OpenAI is making a major push into the agentic AI space with the rollout of <strong>Agents in ChatGPT</strong> — an ambitious new platform internally codenamed <strong>Hermes</strong> — that transforms ChatGPT from a conversational assistant into a full-blown autonomous workflow engine. The update, currently being prepared for broader release, introduces an <strong>Agents Studio</strong>, pre-built templates, scheduling capabilities, Slack integration, and a rich set of customization tools that let users build agents tailored to their specific needs.</p>
+    id: 104,
+    slug: "bitcoin-mascot-shown-first-time-in-history-in-new-movie-finding-satoshi",
+    title: "Bitcoin Mascot Shown First Time in History in New Movie \"Finding Satoshi\"",
+    excerpt: "The new documentary \"Finding Satoshi\" has unveiled something no one expected — the first-ever Bitcoin mascot, a long-lost character named \"Bity,\" reportedly found among Satoshi Nakamoto's earliest private files from 2008–2009. The reveal appears on screen at the 48:33 mark and has already sent the crypto world into a frenzy.",
+    content: `<p>The long-awaited documentary <strong>"Finding Satoshi"</strong>, which premiered today, has delivered one of the most surprising moments in the history of Bitcoin coverage: the on-screen reveal of what the film presents as <strong>the very first Bitcoin mascot</strong> — a small, round character with a stubby body, a beaming bitcoin-symbol face, and a pair of tiny arms, designed as a friendly visual ambassador for the then-unknown protocol.</p>
 
-<p>The move signals OpenAI's intent to compete directly with enterprise automation platforms, positioning ChatGPT not just as a place to ask questions, but as a tool that can <em>keep work moving 24/7</em> — even when you're not at your desk.</p>
+<p>The character — informally known in the film as <strong>"Bity"</strong> — had never been shown publicly before. According to the documentary, the concept sketches were discovered among a set of early personal files dated between <strong>2008 and 2009</strong>, during the period when Bitcoin's whitepaper was being finalized and the first blocks were being mined.</p>
 
-<h2>What Are ChatGPT Agents?</h2>
+<h2>The 48:33 Moment</h2>
 
-<p>At their core, ChatGPT Agents are autonomous AI workflows that users can define, configure, and deploy to handle recurring tasks without constant human input. Think of them as programmable AI coworkers — capable of answering Slack messages, processing information, summarizing documents, or running scheduled reports — all on their own, based on instructions you set in advance.</p>
-
-<p>OpenAI describes the vision plainly: <em>"Keep work moving 24/7 with agents."</em> The platform is designed to be accessible to non-technical users while still offering enough depth for power users and teams who want granular control over agent behavior.</p>
-
-<h2>The Agents Studio: Build From Scratch or Start From a Template</h2>
+<p>The reveal comes roughly <strong>48 minutes and 33 seconds</strong> into the film, in what is shaping up to be the documentary's most talked-about scene. After building a careful investigative arc through interviews with figures like <strong>Michael Saylor</strong>, <strong>Fred Ehrsam</strong>, <strong>Joseph Lubin</strong>, and <strong>Brian Brooks</strong>, the camera cuts to a whiteboard in a private room where investigator <strong>Tyler Maroney</strong> and journalist <strong>William D. Cohan</strong> lay out a series of hand-drawn sketches under the title <em>"Bity — Bitcoin Mascot v0.1 (never released)."</em></p>
 
 <figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
-  <img src="/images/MemeAnalyzer1.png" alt="ChatGPT Agents page showing the Studio and templates" style="width: 100%; display: block;" />
+  <img src="/images/Bity.jpg" alt="Whiteboard from the documentary Finding Satoshi showing early concept sketches of Bity, the first Bitcoin mascot" style="width: 100%; display: block;" />
+  <figcaption style="padding: 14px 20px; font-size: 13px; color: #94a3b8; background: #0b1220; border-top: 1px solid rgba(148,163,184,0.15); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.02em;">
+    Bity — the first known Bitcoin mascot, revealed at 48:33 in the documentary. <span style="color:#67e8f9;">Image credit: "Finding Satoshi" (2026), findingsatoshi.com</span>
+  </figcaption>
 </figure>
 
-<p>The centerpiece of the new Agents experience is the <strong>Agents Studio</strong> — a dedicated interface at <code>chatgpt.com/agents</code> where users can browse, create, and manage their agents. The Studio offers two main paths for getting started:</p>
+<p>The board lays out the design process with striking clarity. Pinned around the central "FINAL RESULT" sketch are a series of rejected concepts — a <strong>"Fast & Futuristic"</strong> running bitcoin, a <strong>"Friendly &amp; Minimal"</strong> round variant, a caped <strong>"Timeless &amp; Iconic"</strong> version, and a <strong>"Global &amp; Connected"</strong> bitcoin orbiting a network diagram. In the bottom-right corner, a yellow sticky note simply reads: <em>"Found in Satoshi's things — 2008–2009."</em></p>
+
+<h2>A Mascot That Never Made It Out</h2>
+
+<p>According to the film, Bity was never released, never published online, and never referenced in any known Bitcoin forum post or mailing-list message. The filmmakers frame the discovery as a small but telling artifact — evidence that whoever was behind Satoshi Nakamoto considered, at least briefly, giving the protocol a <em>face</em>.</p>
+
+<p>The concept notes on the board spell out the design philosophy in a single red-inked heading: <strong>CONCEPT</strong> — <em>"Exploring different ideas to find a mascot that represents Bitcoin's values and mission."</em> Beneath the chosen mascot, a handwritten caption reads: <em>"The chosen mascot. Simple, friendly and memorable."</em></p>
+
+<p>A second note, labeled <strong>KEY TRAITS</strong>, lists the qualities the designer was aiming for:</p>
 
 <ul>
-  <li><strong>Start from a template</strong> — OpenAI is launching with a library of pre-built agent templates covering common workflows, including <em>Team chat Q&amp;A</em>, <em>Morning planner</em>, <em>Bug triage</em>, <em>Data analysis</em>, <em>Sales assistant</em>, <em>SQL query runner</em>, and more. Each template comes pre-configured with relevant tools and a suggested set of instructions so users can get up and running in minutes.</li>
-  <li><strong>Build from scratch</strong> — For those with specific needs, the Studio allows fully custom agent creation, where users define the agent's name, avatar, instructions, connected tools, skills, and memory settings from the ground up.</li>
+  <li><strong>Trustworthy</strong></li>
+  <li><strong>Innovative</strong></li>
+  <li><strong>Accessible</strong></li>
+  <li><strong>Decentralized</strong></li>
+  <li><strong>Global</strong></li>
+  <li><strong>For everyone</strong></li>
 </ul>
 
-<p>OpenAI's pitch for templates is direct: <em>"Start with a proven workflow — Pick a template and get your agent up and running in minutes."</em></p>
+<p>A smaller panel on the board — labeled <em>"Personality sketches"</em> — shows Bity in three moods: a gloved, waving version; a cross-legged, meditating version; and a smaller, shy variant peeking out from behind a curve. A fourth panel, titled <em>"Expression ideas,"</em> lays out how Bity might communicate without words: a speech bubble, a surprised look, a closed-eyed calm, and a glowing variant.</p>
 
-<h2>Customization: Tools, Skills, Files, and Memory</h2>
+<h2>Why This Matters</h2>
 
-<figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
-  <img src="/images/MemeAnalyzer2.png" alt="ChatGPT Agent creation screen with Meme Analyzer example" style="width: 100%; display: block;" />
-</figure>
+<blockquote>"It doesn't change Bitcoin. It doesn't change the code. But it changes how we think about the person — or people — who started this. Whoever they were, they cared enough to sit down and try to draw a face for it." — William D. Cohan, in the film</blockquote>
 
-<p>Once inside the Studio editor, users have access to a rich set of customization options that go well beyond anything previously available in ChatGPT. Each agent can be configured with:</p>
+<p>For more than fifteen years, Bitcoin has lived almost entirely as a technical and financial artifact — a protocol, a whitepaper, a chain of blocks. It has no official logo committee, no brand guidelines, and no mascot. The orange "₿" symbol, which became the de facto visual identity for the asset, was itself adopted informally by the community long after Satoshi's disappearance.</p>
 
-<ul>
-  <li><strong>Browse apps</strong> — Connect your agent to external services and data sources</li>
-  <li><strong>Add skills</strong> — Attach specialized capabilities to extend what your agent can do</li>
-  <li><strong>Upload files</strong> — Give your agent access to documents, spreadsheets, and reference materials it can draw on when responding</li>
-  <li><strong>Memory</strong> — Enable persistent memory so the agent retains context across interactions</li>
-  <li><strong>Instructions</strong> — Write natural-language instructions that define the agent's behavior, tone, and scope</li>
-</ul>
+<p>The discovery of Bity, if accepted at face value, suggests that the earliest thinking around Bitcoin was not only technical but also — even briefly — <em>human</em>. A character. A personality. A small, round, smiling face meant to make a radical financial experiment feel approachable to ordinary people.</p>
 
-<p>The combination of these tools means agents can be made highly specific — a customer support agent that knows your product documentation, a morning briefing agent that knows your schedule and priorities, or a code review agent that understands your team's standards.</p>
+<h2>Community Reaction</h2>
 
-<h2>Slack Integration: Agents That Reply Without You</h2>
+<p>Within minutes of the 48:33 scene leaking in clips across social media, the crypto community responded with the kind of energy usually reserved for halving events. On X, the hashtag <strong>#Bity</strong> began trending alongside <strong>#FindingSatoshi</strong>, with fan art, merchandise mock-ups, and meme edits appearing in real time.</p>
 
-<figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
-  <img src="/images/MemeAnalyzer3.png" alt="ChatGPT Agent Studio editor showing channels and configuration options" style="width: 100%; display: block;" />
-</figure>
+<p>Prominent early Bitcoiners weighed in quickly. Several noted that while the authenticity of the sketches will inevitably be debated, the <em>spirit</em> of the character — playful, minimalist, and unmistakably rooted in the early Bitcoin aesthetic — feels right for the era it supposedly came from.</p>
 
-<p>One of the most practically significant features of the Agents rollout is <strong>native Slack integration</strong>. Users can add their agents directly to Slack channels, allowing the agent to monitor conversations and respond to questions autonomously — without the user needing to be present or manually intervene.</p>
+<blockquote>"If Satoshi really did doodle a mascot and then decided not to ship it, that's maybe the most Satoshi thing I've ever heard." — Jameson Lopp, paraphrased from a post-screening reaction</blockquote>
 
-<p>OpenAI describes the use case this way: <em>"Build agents that reply in Slack — Add agents to Slack to handle common questions, without the back-and-forth or manual digging."</em></p>
+<h2>What the Filmmakers Say</h2>
 
-<p>This has clear implications for team environments where common questions get asked repeatedly — onboarding queries, policy lookups, product FAQs, or status updates — all things an agent with the right files and instructions could handle reliably without human intervention.</p>
+<p>The documentary — produced alongside investigators at <strong>Quest Research &amp; Investigations</strong> — treats the Bity discovery carefully. The filmmakers do not claim the sketches are definitively by Satoshi. Instead, they frame them as <em>"recovered from materials consistent with Satoshi-era files,"</em> and leave the final judgment to the viewer.</p>
 
-<h2>Scheduling: Agents That Run on Their Own</h2>
+<p>The decision to show the mascot at all was, according to the film's own narration, not taken lightly. Cohan describes the moment as <em>"a small piece of humanity in a story that has, for too long, been told as pure cryptography."</em></p>
 
-<p>Beyond reactive agents that respond to messages, OpenAI is also introducing <strong>scheduled agents</strong> — automations that run at defined times without any trigger from the user. This enables use cases like:</p>
+<h2>A New Chapter for Bitcoin Iconography</h2>
 
-<ul>
-  <li>A <strong>morning briefing agent</strong> that compiles a summary of overnight news, emails, and calendar events every day at 7 AM</li>
-  <li>A <strong>weekly report agent</strong> that pulls together key metrics and sends a digest every Monday morning</li>
-  <li>A <strong>monitoring agent</strong> that checks for specific conditions and alerts you when they're met</li>
-</ul>
+<p>Whether or not Bity is eventually embraced by the community, the mascot's on-screen debut marks a genuine first. Never before has a character purporting to be an original Bitcoin mascot been shown in a public film — let alone one tied directly to the investigation into Satoshi's identity.</p>
 
-<p>As OpenAI puts it: <em>"Create agents tailored to how you work — Customize each agent with tools and skills, then schedule when it runs."</em></p>
+<p>For some, the reveal will feel like a long-overdue emotional anchor for an asset class that has spent most of its life defined by charts, code, and controversy. For others, it will simply be a charming historical footnote — a tiny, round face that was almost the public avatar of the most consequential financial invention of the 21st century.</p>
 
-<h2>Also New: ImageGen Likeness Customization and Audio Summaries</h2>
-
-<p>Alongside the Agents rollout, OpenAI is shipping two additional features that expand ChatGPT's creative and productivity capabilities.</p>
-
-<p>The first is <strong>ImageGen Likeness Customization</strong> — a new option that allows users to upload a reference photo of themselves, which ChatGPT then uses as a visual anchor when generating personalized images. The feature, which OpenAI is initially launching alongside an <strong>Images 2.0 Giveaway</strong>, means users can more reliably generate images that look like them — useful for everything from profile picture generation to creative storytelling.</p>
-
-<p>The second is <strong>Audio Summary</strong> — a feature that transforms text content into spoken audio recaps in a variety of formats. OpenAI is framing this as a flexible content transformation tool with multiple output styles, including:</p>
-
-<ul>
-  <li>A <strong>public-radio style recap</strong> — polished, journalistic audio summaries of documents or articles</li>
-  <li>An <strong>executive briefing</strong> — concise, professional audio digests for busy decision-makers</li>
-  <li>A <strong>study guide</strong> — structured audio reviews of learning material, designed for retention</li>
-  <li>A <strong>podcast-style</strong> format — more conversational, long-form audio from written content</li>
-</ul>
-
-<p>The Audio Summary feature effectively brings the functionality of AI podcast generators directly into ChatGPT, without the need for third-party tools.</p>
-
-<h2>A Platform Play, Not Just a Feature Drop</h2>
-
-<p>Taken together, the Agents platform represents one of the more significant architectural shifts in ChatGPT's history. Rather than adding individual capabilities, OpenAI is building out an entire <strong>automation layer</strong> on top of its models — one that treats ChatGPT less like an AI assistant and more like an AI operating system.</p>
-
-<p>The combination of a no-code studio, flexible templates, third-party integrations, scheduling, and persistent memory means that agents built inside ChatGPT can handle multi-step, ongoing workflows across an organization — with minimal setup and no engineering required.</p>
-
-<p>For users who have been waiting for AI tools that do more than respond to prompts, the Hermes update appears to be OpenAI's answer: an agents platform designed from the ground up to run in the background, handle the repetitive work, and surface results when they matter.</p>
-
-<p>Whether it can match the depth and flexibility of existing enterprise automation platforms remains to be seen — but OpenAI is clearly betting that ease of use, combined with the power of its underlying models, will be enough to win users over.</p>`,
+<p>Either way, for a few seconds at the 48-minute mark of <strong>"Finding Satoshi,"</strong> Bitcoin had a face. And for a community that has spent years searching for its creator, even a cartoon smile feels, for now, like an answer.</p>`,
     category: "Technology",
-    author: "Lena Hartwell",
-    authorRole: "AI & Tech Reporter",
-    publishedAt: "2026-04-21T09:00:00Z",
-    readTime: 9,
-    imageId: 103,
-    imageUrl: "/images/MemeAnalyzer1.png",
-    featured: true,
-    trending: true,
-    tags: ["openai", "chatgpt", "agents", "ai", "automation", "hermes", "slack", "studio", "imagegen", "audio-summary"],
-  },
-  {
-    id: 102,
-    slug: "elon-musk-buys-ancient-grokion-sculpture-just-because-of-its-name",
-    title: "Elon Musk Buys Ancient \"Grokion IV\" Sculpture Today Just Because He Loved the Name",
-    excerpt: "In a surprise acquisition, Elon Musk purchased the ancient marble sculpture known as \"Grokion IV\" earlier today, saying he bought it solely because of its name. The piece will be displayed at his Tesla office.",
-    content: `<p>In one of the most unusual art acquisitions of the year, billionaire <strong>Elon Musk</strong> confirmed earlier today, <strong>April 20, 2026</strong>, that he has purchased the ancient marble sculpture known as <strong>"Grokion IV"</strong> — and the reason behind the buy is as unconventional as the buyer himself.</p>
-
-<p>According to Musk, the sale was finalized in the early hours of the morning after a brief private negotiation with the sculpture's previous owner. Within hours, the acquisition was being discussed widely across social media, art circles, and technology newsrooms, with many stunned by both the speed of the deal and the reasoning behind it.</p>
-
-<h2>"I Just Loved the Name"</h2>
-
-<p>Speaking in a short statement shared on X shortly after the purchase was completed, Musk was refreshingly blunt about his motivation:</p>
-
-<blockquote>"I bought it because of the name. 'Grokion IV.' I loved it the second I heard it. Sometimes that's all it takes." — Elon Musk</blockquote>
-
-<p>The name "Grokion IV" is believed to trace back to classical-era inscriptions associated with the sculpture, with the Roman numeral indicating it as the fourth in a series of related pieces attributed to the same workshop. Scholars remain divided over the precise origin of the name, but for Musk — whose AI venture xAI famously developed a model named <em>Grok</em> — the linguistic echo was apparently irresistible.</p>
-
-<p>Sources close to the transaction say Musk did not conduct a formal provenance review before completing the deal, instead relying on the opinion of a small circle of advisors. Art historians have pointed out that while the sculpture is widely considered authentic, its exact date of origin is still debated, with estimates ranging from the <strong>late Classical to early Hellenistic periods</strong>.</p>
-
-<h2>The Sculpture Itself</h2>
-
-<p>Grokion IV is a life-sized marble head and partial bust depicting a young male figure with tightly curled hair, a calm, slightly downturned gaze, and the smooth, idealized features typical of ancient Greek sculpture. The piece shows visible signs of age, including surface weathering, minor chips, and faint reddish residue around the neckline — remnants, experts say, of pigment or iron oxides absorbed over centuries.</p>
-
-<p>Key features noted by appraisers include:</p>
-
-<ul>
-<li>A <strong>finely carved head of curled hair</strong>, sculpted with deep undercuts and individual strand definition</li>
-<li><strong>Symmetrical facial proportions</strong>, consistent with classical Greek ideals of youthful beauty</li>
-<li>A <strong>broad, rounded bust base</strong>, suggesting the piece was originally designed for display on a plinth</li>
-<li>Subtle <strong>tool marks and weathering</strong> consistent with long-term exposure prior to restoration</li>
-</ul>
-
-<p>Despite its age, Grokion IV is in remarkably good condition, with the face fully intact — a rarity among surviving classical busts of this scale.</p>
-
-<h2>Heading to the Tesla Office</h2>
-
-<p>Musk confirmed that the sculpture will <strong>not be displayed in a museum, gallery, or private collection vault</strong>, but will instead be installed at his <strong>Tesla office</strong>, where he spends a significant portion of his working hours.</p>
-
-<blockquote>"It's going in my Tesla office. I want to see it every day. It'll be right there while we're building cars and launching rockets and arguing about AI." — Elon Musk</blockquote>
-
-<p>The unconventional placement has raised eyebrows among conservationists, who note that ancient marble pieces are typically kept in climate-controlled environments with carefully managed humidity and lighting. A Tesla spokesperson, speaking off the record, indicated that a dedicated display case with environmental controls is already being prepared for the sculpture's arrival.</p>
-
-<h2>An Eccentric Purchase, Fitting a Pattern</h2>
-
-<p>Today's acquisition adds another entry to Musk's growing list of impulsive, name-driven decisions — from rebranding Twitter to <em>X</em>, to naming a son <em>X Æ A-12</em>, to christening his AI assistant <em>Grok</em>. For fans, the purchase is a quintessentially Muskian gesture: bold, slightly absurd, and entirely on-brand.</p>
-
-<p>Critics, meanwhile, have questioned whether a centuries-old artifact should be purchased on little more than a whim, particularly when its cultural significance extends well beyond the personal taste of any individual buyer.</p>
-
-<p>Still, for now, <strong>Grokion IV</strong> is heading to a very modern home — a marble face from antiquity, soon to sit quietly in the corner of a Tesla office, watching over the engineers and executives shaping what comes next.</p>
-
-<p>As one art dealer put it after hearing the news: <em>"Only Elon could buy a two-thousand-year-old sculpture before breakfast and put it next to a Cybertruck prototype."</em></p>`,
-    category: "Entertainment",
     author: "Marcus Webb",
-    authorRole: "Technology & Culture Correspondent",
-    publishedAt: "2026-04-20T13:45:00Z",
-    readTime: 7,
-    imageId: 1075,
-    imageUrl: "/images/grokion.png",
+    authorRole: "Crypto & Culture Correspondent",
+    publishedAt: "2026-04-22T16:30:00Z",
+    readTime: 8,
+    imageId: 104,
+    imageUrl: "/images/Bity.jpg",
     featured: true,
     trending: true,
-    tags: ["elon-musk", "grokion-iv", "sculpture", "art", "tesla", "grok", "acquisition"],
+    tags: ["bitcoin", "satoshi", "finding-satoshi", "documentary", "bity", "mascot", "crypto", "william-cohan", "tyler-maroney"],
   },
   {
     id: 101,

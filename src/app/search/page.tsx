@@ -21,18 +21,19 @@ export default async function SearchPage({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-        <Link href="/" className="hover:text-rose-400 transition-colors">
+      <nav className="flex items-center gap-2 text-[11px] text-slate-500 mb-6 uppercase tracking-widest font-mono">
+        <Link href="/" className="hover:text-cyan-400 transition-colors">
           Home
         </Link>
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
+        <span className="text-ink-700">/</span>
         <span className="text-slate-200 font-medium">Search</span>
       </nav>
 
       <div className="mb-10">
-        <h1 className="text-4xl font-black text-white mb-6 tracking-tight">Search</h1>
+        <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em] font-mono">
+          // Query
+        </span>
+        <h1 className="text-4xl font-black text-white mb-6 mt-2 tracking-tight uppercase">Search</h1>
         <div className="max-w-2xl">
           <SearchBar />
         </div>
@@ -40,10 +41,10 @@ export default async function SearchPage({
 
       {query && (
         <div className="mb-8">
-          <p className="text-slate-400">
+          <p className="text-slate-400 font-mono text-sm">
             {results.length > 0 ? (
               <>
-                Found <span className="font-semibold text-white">{results.length}</span>{" "}
+                Found <span className="font-semibold text-cyan-400">{results.length}</span>{" "}
                 {results.length === 1 ? "result" : "results"} for{" "}
                 <span className="font-semibold text-white">&ldquo;{query}&rdquo;</span>
               </>
@@ -81,10 +82,10 @@ export default async function SearchPage({
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-          <p className="text-xl font-semibold text-slate-300">
+          <p className="text-xl font-bold text-slate-300 uppercase tracking-wider">
             Enter a search term to find articles
           </p>
-          <p className="text-slate-500 mt-2">
+          <p className="text-slate-500 mt-2 font-mono text-sm">
             Search by title, author, topic, or keyword
           </p>
         </div>
