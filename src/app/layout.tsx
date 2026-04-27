@@ -3,29 +3,30 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-const SITE_NAME = "PrimeTime Global News";
+const SITE_NAME = "News NFTs";
 const SITE_TITLE =
-  "PrimeTime Global News — Nightly Dispatch, Investigations & Deep Analysis";
+  "News NFTs — On-chain News, NFT Drops & Crypto Markets";
 const SITE_DESCRIPTION =
-  "PrimeTime Global News is an editorial-grade newsroom delivering nightly dispatches, investigative journalism, and deep analysis across world affairs, markets, technology, politics, culture, and science.";
+  "News NFTs is the on-chain newsroom: daily coverage of Bitcoin, Ethereum, DeFi, NFTs, mining, regulation and the wider crypto economy — for builders, traders and collectors.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://primetimeglobalnews.com"),
+  metadataBase: new URL("https://newsnfts.io"),
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
-    "PrimeTime Global News",
-    "global news",
-    "world news",
-    "nightly report",
-    "investigative journalism",
-    "world affairs",
-    "politics",
-    "markets",
-    "technology",
-    "analysis",
-    "dispatch",
+    "News NFTs",
+    "NFT news",
+    "crypto news",
+    "Bitcoin",
+    "Ethereum",
+    "Solana",
+    "DeFi",
+    "NFTs",
+    "mining",
+    "regulation",
+    "blockchain",
+    "crypto markets",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -57,14 +58,14 @@ export const metadata: Metadata = {
     card: "summary",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    site: "@primetimeglobalnews",
-    creator: "@primetimeglobalnews",
+    site: "@newsnfts",
+    creator: "@newsnfts",
     images: ["/icon.svg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#09090a",
+  themeColor: "#03060d",
   colorScheme: "dark",
 };
 

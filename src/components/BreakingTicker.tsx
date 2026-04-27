@@ -8,9 +8,9 @@ export function BreakingTicker() {
     <div className="relative overflow-hidden border-b border-ink-700/60 bg-ink-900 text-slate-200">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(251,191,36,0.05),transparent_30%)] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-10 relative">
-        <span className="shrink-0 inline-flex items-center gap-1.5 font-extrabold text-[10px] uppercase tracking-[0.3em] text-ink-950 px-3 py-1 rounded-sm bg-gold-400 mr-4 font-mono">
-          <span className="w-1.5 h-1.5 rounded-full bg-ink-950 animate-pulse" />
-          Breaking
+        <span className="shrink-0 inline-flex items-center gap-1.5 font-extrabold text-[10px] uppercase tracking-[0.3em] text-white px-3 py-1 rounded-sm bg-gold-400 mr-4 font-mono">
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          On-Chain
         </span>
         <div className="overflow-hidden relative flex-1">
           <div className="flex animate-[scroll_35s_linear_infinite] whitespace-nowrap gap-10">

@@ -8,33 +8,37 @@ import { SearchBar } from "./SearchBar";
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0 group">
-      <span className="relative inline-flex items-center justify-center w-11 h-11 rounded-md bg-ink-900 border border-ink-700 overflow-hidden transition-colors group-hover:border-gold-400/60 shadow-[0_1px_0_rgba(251,191,36,0.06)_inset]">
-        <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(251,191,36,0.14),transparent_55%)]" />
+      <span className="relative inline-flex items-center justify-center w-11 h-11 rounded-md bg-ink-900 border border-ink-700 overflow-hidden transition-colors group-hover:border-gold-400/70 shadow-[0_1px_0_rgba(59,130,246,0.10)_inset]">
+        <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(59,130,246,0.20),transparent_55%)]" />
         <svg className="relative w-7 h-7" viewBox="0 0 32 32" fill="none">
           <defs>
-            <linearGradient id="hdr-gold" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#fde68a" />
-              <stop offset="60%" stopColor="#fbbf24" />
-              <stop offset="100%" stopColor="#d97706" />
+            <linearGradient id="hdr-blue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#93c5fd" />
+              <stop offset="55%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#1d4ed8" />
             </linearGradient>
           </defs>
           <path
-            d="M8 7 L13 7 A6 6 0 0 1 13 19 L12 19 L12 25 L8 25 Z M12 11 L12 15 A2 2 0 0 1 12 11 Z"
-            fill="url(#hdr-gold)"
-            fillRule="evenodd"
+            d="M16 4.6 L25.5 9.8 L25.5 22.2 L16 27.4 L6.5 22.2 L6.5 9.8 Z"
+            fill="none"
+            stroke="url(#hdr-blue)"
+            strokeWidth="1.2"
+            opacity="0.55"
           />
-          <rect x="17.5" y="19.5" width="9" height="1.4" fill="url(#hdr-gold)" opacity="0.85" />
-          <rect x="17.5" y="22" width="6" height="1.2" fill="url(#hdr-gold)" opacity="0.55" />
-          <circle cx="24.5" cy="8.5" r="1.8" fill="#ef4444" />
+          <path
+            d="M10.5 22.5 L10.5 9.5 L13 9.5 L21.5 19 L21.5 9.5 L24 9.5 L24 22.5 L21.5 22.5 L13 13 L13 22.5 Z"
+            fill="url(#hdr-blue)"
+          />
+          <circle cx="24.5" cy="8.5" r="1.6" fill="#ffffff" />
         </svg>
         <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/70 to-transparent" />
       </span>
       <span className="flex flex-col leading-none">
         <span className="font-sans text-[1.35rem] font-black tracking-[-0.035em] text-parchment leading-none">
-          PrimeTime<span className="text-gold-400">.</span>
+          News<span className="text-gold-400"> NFTs</span>
         </span>
         <span className="mt-1 text-[0.6rem] font-medium uppercase tracking-[0.42em] text-slate-500 font-mono">
-          Global News
+          Crypto · DeFi · Markets
         </span>
       </span>
     </Link>
@@ -53,11 +57,11 @@ export function Header() {
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2">
               <span className="relative flex w-2 h-2">
-                <span className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-60" />
-                <span className="relative w-2 h-2 rounded-full bg-red-500" />
+                <span className="absolute inset-0 rounded-full bg-gold-400 animate-ping opacity-60" />
+                <span className="relative w-2 h-2 rounded-full bg-gold-400" />
               </span>
-              <span className="text-red-400 uppercase tracking-[0.25em] font-bold">
-                On Air
+              <span className="text-gold-400 uppercase tracking-[0.25em] font-bold">
+                Live
               </span>
               <span className="text-ink-700">·</span>
               <span className="uppercase tracking-[0.18em] text-slate-500">
@@ -72,7 +76,7 @@ export function Header() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://x.com/primetimeglobalnews"
+              href="https://x.com/newsnfts"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-gold-400 transition-colors flex items-center gap-1.5 uppercase tracking-[0.18em]"
@@ -93,7 +97,7 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            {categories.slice(0, 8).map((cat) => (
+            {categories.map((cat) => (
               <Link
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
@@ -102,25 +106,6 @@ export function Header() {
                 {cat}
               </Link>
             ))}
-            <div className="relative group">
-              <button className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 hover:text-parchment transition-colors rounded-sm hover:bg-ink-800 flex items-center gap-1">
-                More
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div className="absolute right-0 top-full mt-1 w-44 bg-ink-900 rounded-sm shadow-2xl shadow-black/60 border border-ink-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-1">
-                {categories.slice(8).map((cat) => (
-                  <Link
-                    key={cat}
-                    href={`/category/${cat.toLowerCase()}`}
-                    className="block px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 hover:text-parchment hover:bg-ink-800"
-                  >
-                    {cat}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </nav>
 
           {/* Actions */}
@@ -153,8 +138,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* gold hairline under header */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
+      {/* Brand hairline under header */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
 
       {/* Search bar */}
       {searchOpen && (

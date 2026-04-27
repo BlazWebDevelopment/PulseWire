@@ -35,14 +35,14 @@ export function SearchBar({ onClose }: { onClose?: () => void }) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search articles, topics, authors..."
+          placeholder="Search collections, tokens, authors..."
           className="w-full pl-10 pr-4 py-2.5 bg-ink-900 border border-ink-700 rounded-sm text-sm text-parchment placeholder:text-slate-600 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/40 font-mono"
           autoFocus
         />
       </div>
       <button
         type="submit"
-        className="px-5 py-2.5 bg-gold-400 hover:bg-gold-300 text-ink-950 text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors shrink-0"
+        className="px-5 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors shrink-0"
       >
         Search
       </button>

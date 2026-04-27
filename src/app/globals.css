@@ -1,67 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary brand accent — broadcast gold */
-  --color-gold-100: #fef3c7;
-  --color-gold-200: #fde68a;
-  --color-gold-300: #fcd34d;
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #f59e0b;
-  --color-gold-600: #d97706;
-  --color-gold-700: #b45309;
+  /* Primary brand accent — electric blue.
+     The existing class names "gold-*" are kept and remapped to blue
+     so utilities like `text-gold-400`, `bg-gold-400`, etc. now render
+     as the new brand blue. */
+  --color-gold-100: #dbeafe;
+  --color-gold-200: #bfdbfe;
+  --color-gold-300: #93c5fd;
+  --color-gold-400: #3b82f6;
+  --color-gold-500: #2563eb;
+  --color-gold-600: #1d4ed8;
+  --color-gold-700: #1e40af;
 
-  /* Legacy tokens kept for any lingering refs, mapped to gold */
-  --color-crimson: #fde68a;
-  --color-crimson-dark: #f59e0b;
-  --color-neon: #fbbf24;
-  --color-neon-dim: #b45309;
+  /* Legacy crimson/neon tokens remapped onto blue */
+  --color-crimson: #bfdbfe;
+  --color-crimson-dark: #2563eb;
+  --color-neon: #3b82f6;
+  --color-neon-dim: #1e40af;
 
-  /* Neutral dark gray ink scale (zinc-based) */
-  --color-black: #050505;
-  --color-ink-950: #09090a;
-  --color-ink-900: #0f0f10;
-  --color-ink-850: #151517;
-  --color-ink-800: #1c1c1e;
-  --color-ink-700: #27272a;
-  --color-ink-600: #3f3f46;
+  /* Pure-black ink scale with the faintest blue undertone */
+  --color-black: #000000;
+  --color-ink-950: #03060d;
+  --color-ink-900: #07091a;
+  --color-ink-850: #0b0e22;
+  --color-ink-800: #11142c;
+  --color-ink-700: #1c2042;
+  --color-ink-600: #2a3060;
 
-  /* Off-white text tones (kept under the "parchment" token name for compat) */
-  --color-parchment: #f4f4f5;
-  --color-parchment-dim: #d4d4d8;
+  /* Off-white text tones (kept under the "parchment" token name) */
+  --color-parchment: #f8fafc;
+  --color-parchment-dim: #cbd5e1;
 
-  /* Neutral slate scale aligned with zinc */
-  --color-slate-100: #fafafa;
-  --color-slate-200: #f4f4f5;
-  --color-slate-300: #e4e4e7;
-  --color-slate-400: #a1a1aa;
-  --color-slate-500: #71717a;
-  --color-slate-600: #52525b;
-  --color-slate-700: #3f3f46;
-  --color-slate-800: #27272a;
-  --color-slate-900: #18181b;
-  --color-slate-950: #09090b;
+  /* Cool slate scale */
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
 
-  /* Remap rose tokens to gold so any stray rose utilities blend in */
-  --color-rose-200: #fef3c7;
-  --color-rose-300: #fde68a;
-  --color-rose-400: #fbbf24;
-  --color-rose-500: #f59e0b;
-  --color-rose-600: #d97706;
-  --color-rose-700: #b45309;
+  /* Remap legacy rose tokens to blue */
+  --color-rose-200: #dbeafe;
+  --color-rose-300: #bfdbfe;
+  --color-rose-400: #3b82f6;
+  --color-rose-500: #2563eb;
+  --color-rose-600: #1d4ed8;
+  --color-rose-700: #1e40af;
 
-  /* Remap cyan tokens so any leftover cyan-400 etc. renders as gold */
-  --color-cyan-100: #fef3c7;
-  --color-cyan-200: #fde68a;
-  --color-cyan-300: #fcd34d;
-  --color-cyan-400: #fbbf24;
-  --color-cyan-500: #f59e0b;
-  --color-cyan-600: #d97706;
-  --color-cyan-700: #b45309;
+  /* Remap legacy cyan tokens to brand blue */
+  --color-cyan-100: #dbeafe;
+  --color-cyan-200: #bfdbfe;
+  --color-cyan-300: #93c5fd;
+  --color-cyan-400: #3b82f6;
+  --color-cyan-500: #2563eb;
+  --color-cyan-600: #1d4ed8;
+  --color-cyan-700: #1e40af;
 
-  /* Typography — readable modern pairing:
-     Inter (the reference modern sans) for UI/body,
-     Newsreader (serif purpose-built for news reading) for headlines,
-     Geist Mono for technical labels / timestamps. */
+  /* Typography */
   --font-sans:
     "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
@@ -80,21 +80,19 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #f4f4f5;
-  background-color: #09090a;
+  color: #f8fafc;
+  background-color: #03060d;
   background-image:
-    radial-gradient(1200px 620px at 12% -10%, rgba(251, 191, 36, 0.08), transparent 60%),
-    radial-gradient(900px 520px at 100% 0%, rgba(251, 191, 36, 0.04), transparent 55%),
-    radial-gradient(900px 520px at 50% 115%, rgba(251, 191, 36, 0.035), transparent 60%),
-    linear-gradient(180deg, #0f0f10 0%, #09090a 100%);
+    radial-gradient(1200px 620px at 12% -10%, rgba(59, 130, 246, 0.16), transparent 60%),
+    radial-gradient(900px 520px at 100% 0%, rgba(37, 99, 235, 0.10), transparent 55%),
+    radial-gradient(900px 520px at 50% 115%, rgba(59, 130, 246, 0.07), transparent 60%),
+    linear-gradient(180deg, #07091a 0%, #03060d 100%);
   background-attachment: fixed;
   font-family: var(--font-sans);
   font-feature-settings: "cv11", "ss01", "ss03";
   font-variation-settings: "opsz" 14;
 }
 
-/* Headings use Newsreader — a serif designed for news reading. It has a
-   full weight axis (400–800), so real bold faces are available. */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-optical-sizing: auto;
@@ -104,8 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background-color: #fbbf24;
-  color: #09090a;
+  background-color: #3b82f6;
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -113,38 +111,38 @@ h1, h2, h3, h4, h5, h6 {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0f10;
+  background: #07091a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1c2042;
   border-radius: 2px;
-  border: 2px solid #0f0f10;
+  border: 2px solid #07091a;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #2a3060;
 }
 
 /* Brand accent utilities */
 .gold-glow {
   box-shadow:
-    0 0 0 1px rgba(251, 191, 36, 0.35),
-    0 0 24px rgba(251, 191, 36, 0.2);
+    0 0 0 1px rgba(59, 130, 246, 0.45),
+    0 0 28px rgba(59, 130, 246, 0.28);
 }
 .gold-ring {
-  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.18) inset;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.22) inset;
 }
 .parchment-ring {
-  box-shadow: 0 0 0 1px rgba(244, 244, 245, 0.08) inset;
+  box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.08) inset;
 }
 
-/* Legacy aliases kept for compatibility */
+/* Legacy aliases */
 .neon-glow {
   box-shadow:
-    0 0 0 1px rgba(251, 191, 36, 0.35),
-    0 0 24px rgba(251, 191, 36, 0.18);
+    0 0 0 1px rgba(59, 130, 246, 0.45),
+    0 0 28px rgba(59, 130, 246, 0.22);
 }
 .silver-ring {
-  box-shadow: 0 0 0 1px rgba(244, 244, 245, 0.08) inset;
+  box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.08) inset;
 }
 
 .line-clamp-2 {
@@ -171,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------- Editorial article body ---------- */
 
 .article-content {
-  color: #d4d4d8;
+  color: #cbd5e1;
   font-family: var(--font-sans);
   font-size: 1.1rem;
   line-height: 1.75;
@@ -183,25 +181,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
-/* Drop cap on the opening paragraph — Newsreader has weight, so the letter
-   anchors without looking fragile. */
 .article-content > p:first-of-type::first-letter {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 4.75rem;
   line-height: 0.88;
   float: left;
-  color: #fbbf24;
+  color: #3b82f6;
   padding: 0.35rem 0.75rem 0 0;
   margin-top: 0.1rem;
-  text-shadow: 0 0 24px rgba(251, 191, 36, 0.2);
+  text-shadow: 0 0 28px rgba(59, 130, 246, 0.35);
 }
 
 .article-content h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 2rem;
-  color: #fafafa;
+  color: #ffffff;
   margin-top: 2.75rem;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -213,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.5rem;
-  color: #fafafa;
+  color: #ffffff;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   letter-spacing: -0.015em;
@@ -221,33 +217,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .article-content strong {
-  color: #fafafa;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .article-content em {
-  color: #f4f4f5;
+  color: #f8fafc;
   font-style: italic;
 }
 
 .article-content a {
-  color: #fbbf24;
+  color: #60a5fa;
   text-decoration: underline;
-  text-decoration-color: rgba(251, 191, 36, 0.4);
+  text-decoration-color: rgba(96, 165, 250, 0.4);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: text-decoration-color 0.2s ease;
 }
 
 .article-content a:hover {
-  text-decoration-color: #fbbf24;
+  text-decoration-color: #60a5fa;
 }
 
 .article-content blockquote {
-  border-left: 3px solid #fbbf24;
+  border-left: 3px solid #3b82f6;
   background: linear-gradient(
     90deg,
-    rgba(251, 191, 36, 0.06),
+    rgba(59, 130, 246, 0.10),
     transparent 70%
   );
   padding: 1rem 1.5rem 1rem 1.75rem;
@@ -257,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   font-size: 1.375rem;
   line-height: 1.45;
-  color: #fafafa;
+  color: #ffffff;
   border-radius: 0 0.125rem 0.125rem 0;
   letter-spacing: -0.015em;
 }
@@ -266,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 .article-content ol {
   margin: 1.5rem 0;
   padding-left: 1.75rem;
-  color: #d4d4d8;
+  color: #cbd5e1;
 }
 
 .article-content ul {
@@ -283,12 +279,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .article-content li::marker {
-  color: #fbbf24;
+  color: #3b82f6;
 }
 
-/* ---------- Inline media inside article body ----------
-   Authors can drop <img>, <figure>, <figcaption>, <video>, or <iframe>
-   anywhere inside the article HTML and they'll be styled consistently. */
+/* ---------- Inline media inside article body ---------- */
 
 .article-content img,
 .article-content video,
@@ -298,10 +292,10 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
   margin: 2.5rem auto;
   border-radius: 0.125rem;
-  background: #0f0f10;
+  background: #07091a;
   box-shadow:
-    0 0 0 1px rgba(39, 39, 42, 0.8) inset,
-    0 30px 60px -20px rgba(0, 0, 0, 0.6);
+    0 0 0 1px rgba(28, 32, 66, 0.9) inset,
+    0 30px 60px -20px rgba(0, 0, 0, 0.7);
 }
 
 .article-content iframe {
@@ -322,15 +316,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: #71717a;
+  color: #64748b;
   margin-top: 0.75rem;
   padding-left: 0.75rem;
-  border-left: 2px solid #fbbf24;
+  border-left: 2px solid #3b82f6;
   line-height: 1.5;
 }
 
-/* Side-by-side image grid: wrap two <img>/<figure> elements in a
-   <div class="img-grid">…</div> inside article HTML. */
 .article-content .img-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -350,8 +342,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Edge-to-edge feature image: <figure class="img-wide">…</figure>
-   breaks out of the reading column for extra impact. */
 .article-content .img-wide {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -382,11 +372,11 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   background: linear-gradient(
     90deg,
-    #fbbf24 0%,
-    #fde68a 50%,
-    #f59e0b 100%
+    #60a5fa 0%,
+    #3b82f6 50%,
+    #1d4ed8 100%
   );
-  box-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
   transform-origin: 0 50%;
   will-change: transform;
 }

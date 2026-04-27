@@ -19,14 +19,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const categoryName = categories.find((c) => c.toLowerCase() === slug);
-  if (!categoryName) return { title: "Desk Not Found · PrimeTime Global News" };
+  if (!categoryName) return { title: "Desk Not Found · News NFTs" };
   return {
-    title: `${categoryName} · PrimeTime Global News`,
-    description: `Latest ${categoryName} news, analysis, and in-depth reporting from the PrimeTime Global News newsroom.`,
+    title: `${categoryName} · News NFTs`,
+    description: `Latest ${categoryName} news, market data, and on-chain analysis from the News NFTs newsroom.`,
     openGraph: {
-      title: `${categoryName} · PrimeTime Global News`,
-      description: `Latest ${categoryName} news, analysis, and in-depth reporting from the PrimeTime Global News newsroom.`,
-      siteName: "PrimeTime Global News",
+      title: `${categoryName} · News NFTs`,
+      description: `Latest ${categoryName} news, market data, and on-chain analysis from the News NFTs newsroom.`,
+      siteName: "News NFTs",
     },
   };
 }
@@ -69,7 +69,7 @@ export default async function CategoryPage({
           {categoryName}<span className="text-gold-400">.</span>
         </h1>
         <p className="font-display text-base lg:text-lg text-slate-400 font-normal">
-          Latest {categoryName.toLowerCase()} dispatches, analysis, and in-depth reporting.
+          Latest {categoryName.toLowerCase()} news, market data, and on-chain analysis.
         </p>
         <div className="h-px w-24 bg-gold-400 mt-5" />
       </div>
@@ -119,7 +119,7 @@ export default async function CategoryPage({
               <Link
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
-                className="px-4 py-2 bg-ink-900 text-slate-300 text-xs font-bold uppercase tracking-[0.22em] rounded-sm ring-1 ring-ink-700 hover:bg-gold-400 hover:ring-gold-400 hover:text-ink-950 transition-colors font-mono"
+                className="px-4 py-2 bg-ink-900 text-slate-300 text-xs font-bold uppercase tracking-[0.22em] rounded-sm ring-1 ring-ink-700 hover:bg-gold-400 hover:ring-gold-400 hover:text-white transition-colors font-mono"
               >
                 {cat}
               </Link>

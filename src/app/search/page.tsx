@@ -5,9 +5,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Search · PrimeTime Global News",
+  title: "Search · News NFTs",
   description:
-    "Search the PrimeTime Global News archive for articles, investigations, topics, and authors.",
+    "Search the News NFTs archive for articles, projects, tokens, collections and authors.",
 };
 
 export default async function SearchPage({

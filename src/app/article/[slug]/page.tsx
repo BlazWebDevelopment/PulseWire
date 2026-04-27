@@ -37,21 +37,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article) return { title: "Article Not Found · PrimeTime Global News" };
+  if (!article) return { title: "Article Not Found · News NFTs" };
   return {
-    title: `${article.title} · PrimeTime Global News`,
+    title: `${article.title} · News NFTs`,
     description: article.excerpt,
     openGraph: {
-      title: `${article.title} · PrimeTime Global News`,
+      title: `${article.title} · News NFTs`,
       description: article.excerpt,
       type: "article",
-      siteName: "PrimeTime Global News",
+      siteName: "News NFTs",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${article.title} · PrimeTime Global News`,
+      title: `${article.title} · News NFTs`,
       description: article.excerpt,
-      site: "@primetimeglobalnews",
+      site: "@newsnfts",
     },
   };
 }
@@ -71,7 +71,7 @@ export default async function ArticlePage({
     .filter((a) => a.id !== article.id)
     .slice(0, 4);
 
-  const shareUrl = `https://primetimeglobalnews.com/article/${article.slug}`;
+  const shareUrl = `https://newsnfts.io/article/${article.slug}`;
   const shareIntentX = `https://x.com/intent/tweet?text=${encodeURIComponent(
     article.title,
   )}&url=${encodeURIComponent(shareUrl)}`;
@@ -223,7 +223,7 @@ export default async function ArticlePage({
                 <Link
                   key={tag}
                   href={`/search?q=${encodeURIComponent(tag)}`}
-                  className="px-3 py-1.5 bg-ink-900 text-slate-300 text-xs rounded-sm ring-1 ring-ink-700 hover:bg-gold-400 hover:text-ink-950 hover:ring-gold-400 transition-colors font-mono"
+                  className="px-3 py-1.5 bg-ink-900 text-slate-300 text-xs rounded-sm ring-1 ring-ink-700 hover:bg-gold-400 hover:text-white hover:ring-gold-400 transition-colors font-mono"
                 >
                   #{tag}
                 </Link>
@@ -256,7 +256,7 @@ export default async function ArticlePage({
               href={shareIntentX}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold-400 hover:bg-gold-300 text-ink-950 text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -348,7 +348,7 @@ export default async function ArticlePage({
         </section>
       )}
 
-      {/* ───── NIGHTLY BRIEF (full-width band) ───── */}
+      {/* ───── DAILY BLOCK (full-width band) ───── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="relative overflow-hidden rounded-sm bg-gradient-to-br from-ink-900 to-ink-850 ring-1 ring-ink-700/70 p-8 sm:p-12">
           <div
@@ -367,30 +367,30 @@ export default async function ArticlePage({
                   <span className="relative w-1.5 h-1.5 rounded-full bg-gold-400" />
                 </span>
                 <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.28em] font-mono">
-                  The Nightly Brief
+                  The Daily Block
                 </span>
               </div>
               <p className="font-display text-[1.75rem] sm:text-[2rem] font-bold text-parchment leading-[1.15] tracking-[-0.02em] mb-3">
-                The stories that matter,{" "}
+                On-chain signal,{" "}
                 <em className="italic font-medium text-gold-400">
-                  every evening.
+                  every morning.
                 </em>
               </p>
               <p className="text-slate-400 text-[15px] leading-relaxed max-w-lg">
-                Our editors&apos; sharpest take on the day. One email. Sent at
-                7pm. No fluff.
+                Drops, flips, flows and the headlines that moved the chart.
+                One email. Sent at 8am UTC. No noise.
               </p>
             </div>
             <form className="md:col-span-2 flex flex-col gap-2">
               <input
                 type="email"
-                placeholder="you@domain.com"
+                placeholder="you@wallet.eth"
                 aria-label="Email address"
                 className="w-full px-4 py-3 bg-ink-950/70 border border-ink-700 focus:border-gold-400/70 focus:outline-none rounded-sm text-sm text-parchment placeholder:text-slate-600 font-mono"
               />
               <button
                 type="button"
-                className="w-full px-4 py-3 bg-gold-400 hover:bg-gold-300 text-ink-950 text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
+                className="w-full px-4 py-3 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
               >
                 Subscribe
               </button>

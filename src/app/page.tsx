@@ -116,17 +116,17 @@ export default function HomePage() {
               <svg className="relative w-7 h-7 text-white mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              <p className="relative font-sans text-parchment font-semibold mb-1 uppercase tracking-[0.24em] text-sm">Follow PrimeTime</p>
+              <p className="relative font-sans text-parchment font-semibold mb-1 uppercase tracking-[0.24em] text-sm">Follow News NFTs</p>
               <p className="relative text-slate-500 text-xs mb-4 font-mono">
-                Dispatches, breaking alerts, commentary.
+                Drops, on-chain alerts, market signals.
               </p>
               <a
-                href="https://x.com/primetimeglobalnews"
+                href="https://x.com/newsnfts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block px-6 py-2.5 bg-gold-400 hover:bg-gold-300 text-ink-950 text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
+                className="relative inline-block px-6 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
               >
-                @PrimeTimeGlobalNews
+                @NewsNFTs
               </a>
             </div>
           </div>
