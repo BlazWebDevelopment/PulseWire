@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Search · News NFTs",
+  title: "Search",
   description:
     "Search the News NFTs archive for articles, projects, tokens, collections and authors.",
 };

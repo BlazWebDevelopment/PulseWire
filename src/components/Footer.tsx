@@ -20,24 +20,29 @@ export function Footer() {
                 <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(59,130,246,0.20),transparent_55%)]" />
                 <svg className="relative w-7 h-7" viewBox="0 0 32 32" fill="none">
                   <defs>
-                    <linearGradient id="ft-blue" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#93c5fd" />
+                    <linearGradient id="ft-blue" x1="0.1" y1="0" x2="0.9" y2="1">
+                      <stop offset="0%" stopColor="#bfdbfe" />
                       <stop offset="55%" stopColor="#3b82f6" />
-                      <stop offset="100%" stopColor="#1d4ed8" />
+                      <stop offset="100%" stopColor="#1e40af" />
+                    </linearGradient>
+                    <linearGradient id="ft-gold" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#fde68a" />
+                      <stop offset="100%" stopColor="#f59e0b" />
                     </linearGradient>
                   </defs>
                   <path
                     d="M16 4.6 L25.5 9.8 L25.5 22.2 L16 27.4 L6.5 22.2 L6.5 9.8 Z"
                     fill="none"
                     stroke="url(#ft-blue)"
-                    strokeWidth="1.2"
+                    strokeWidth="0.9"
                     opacity="0.55"
                   />
                   <path
                     d="M10.5 22.5 L10.5 9.5 L13 9.5 L21.5 19 L21.5 9.5 L24 9.5 L24 22.5 L21.5 22.5 L13 13 L13 22.5 Z"
                     fill="url(#ft-blue)"
                   />
-                  <circle cx="24.5" cy="8.5" r="1.6" fill="#ffffff" />
+                  <circle cx="24" cy="9" r="2.6" fill="none" stroke="#fbbf24" strokeWidth="0.35" opacity="0.5" />
+                  <circle cx="24" cy="9" r="1.55" fill="url(#ft-gold)" />
                 </svg>
                 <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/70 to-transparent" />
               </span>

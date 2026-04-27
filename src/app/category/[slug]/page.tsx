@@ -19,12 +19,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const categoryName = categories.find((c) => c.toLowerCase() === slug);
-  if (!categoryName) return { title: "Desk Not Found · News NFTs" };
+  if (!categoryName) return { title: "Desk Not Found" };
   return {
-    title: `${categoryName} · News NFTs`,
+    title: `${categoryName} Desk`,
     description: `Latest ${categoryName} news, market data, and on-chain analysis from the News NFTs newsroom.`,
     openGraph: {
-      title: `${categoryName} · News NFTs`,
+      title: `${categoryName} Desk · News NFTs`,
       description: `Latest ${categoryName} news, market data, and on-chain analysis from the News NFTs newsroom.`,
       siteName: "News NFTs",
     },

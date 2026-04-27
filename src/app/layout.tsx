@@ -4,33 +4,40 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const SITE_NAME = "News NFTs";
-const SITE_TITLE =
-  "News NFTs — On-chain News, NFT Drops & Crypto Markets";
+const SITE_TAGLINE = "The On-Chain Newsroom";
+const SITE_TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`;
 const SITE_DESCRIPTION =
-  "News NFTs is the on-chain newsroom: daily coverage of Bitcoin, Ethereum, DeFi, NFTs, mining, regulation and the wider crypto economy — for builders, traders and collectors.";
+  "News NFTs is the on-chain newsroom — daily reporting on Bitcoin, Ethereum, DeFi, NFTs, mining, markets and crypto regulation. Built for builders, traders and collectors.";
+const SITE_URL = "https://newsnfts.io";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://newsnfts.io"),
-  title: SITE_TITLE,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s · ${SITE_NAME}`,
+  },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
     "News NFTs",
-    "NFT news",
     "crypto news",
-    "Bitcoin",
-    "Ethereum",
+    "NFT news",
+    "Bitcoin news",
+    "Ethereum news",
     "Solana",
     "DeFi",
-    "NFTs",
+    "on-chain analysis",
+    "crypto markets",
     "mining",
     "regulation",
     "blockchain",
-    "crypto markets",
   ],
-  authors: [{ name: SITE_NAME }],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  alternates: {
+    canonical: SITE_URL,
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -43,6 +50,7 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
+    url: SITE_URL,
     type: "website",
     locale: "en_US",
     images: [
@@ -50,7 +58,7 @@ export const metadata: Metadata = {
         url: "/icon.svg",
         width: 512,
         height: 512,
-        alt: SITE_NAME,
+        alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
       },
     ],
   },

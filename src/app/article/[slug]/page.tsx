@@ -37,19 +37,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article) return { title: "Article Not Found · News NFTs" };
+  if (!article) return { title: "Article Not Found" };
   return {
-    title: `${article.title} · News NFTs`,
+    title: article.title,
     description: article.excerpt,
     openGraph: {
-      title: `${article.title} · News NFTs`,
+      title: article.title,
       description: article.excerpt,
       type: "article",
       siteName: "News NFTs",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${article.title} · News NFTs`,
+      title: article.title,
       description: article.excerpt,
       site: "@newsnfts",
     },
