@@ -11,6 +11,13 @@
   readTime: number;
   imageId: number;
   imageUrl?: string;
+  /**
+   * When `true`, the large hero image at the top of the article page is
+   * suppressed — useful for stories that should open with text only and
+   * use custom images embedded inside `content` instead.
+   * Defaults to `false` (hero is shown when a custom `imageUrl` is set).
+   */
+  hideHero?: boolean;
   featured: boolean;
   trending: boolean;
   tags: string[];
@@ -34,138 +41,6 @@ export const categories = [
 ] as const;
 
 export const articles: Article[] = [
-  {
-    id: 104,
-    slug: "bitcoin-mascot-shown-first-time-in-history-in-new-movie-finding-satoshi",
-    title: "Bitcoin Mascot Shown First Time in History in New Movie \"Finding Satoshi\"",
-    excerpt: "The new documentary \"Finding Satoshi\" has unveiled something no one expected — the first-ever Bitcoin mascot, a long-lost character named \"Bity,\" reportedly found among Satoshi Nakamoto's earliest private files from 2008–2009. The reveal appears on screen at the 48:33 mark and has already sent the crypto world into a frenzy.",
-    content: `<p>The long-awaited documentary <strong>"Finding Satoshi"</strong>, which premiered today, has delivered one of the most surprising moments in the history of Bitcoin coverage: the on-screen reveal of what the film presents as <strong>the very first Bitcoin mascot</strong> — a small, round character with a stubby body, a beaming bitcoin-symbol face, and a pair of tiny arms, designed as a friendly visual ambassador for the then-unknown protocol.</p>
-
-<p>The character — informally known in the film as <strong>"Bity"</strong> — had never been shown publicly before. According to the documentary, the concept sketches were discovered among a set of early personal files dated between <strong>2008 and 2009</strong>, during the period when Bitcoin's whitepaper was being finalized and the first blocks were being mined.</p>
-
-<h2>The 48:33 Moment</h2>
-
-<p>The reveal comes roughly <strong>48 minutes and 33 seconds</strong> into the film, in what is shaping up to be the documentary's most talked-about scene. After building a careful investigative arc through interviews with figures like <strong>Michael Saylor</strong>, <strong>Fred Ehrsam</strong>, <strong>Joseph Lubin</strong>, and <strong>Brian Brooks</strong>, the camera cuts to a whiteboard in a private room where investigator <strong>Tyler Maroney</strong> and journalist <strong>William D. Cohan</strong> lay out a series of hand-drawn sketches under the title <em>"Bity — Bitcoin Mascot v0.1 (never released)."</em></p>
-
-<figure style="margin: 2rem 0; border-radius: 16px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 32px rgba(0,0,0,0.4);">
-  <img src="/images/Bity.jpg" alt="Whiteboard from the documentary Finding Satoshi showing early concept sketches of Bity, the first Bitcoin mascot" style="width: 100%; display: block;" />
-  <figcaption style="padding: 14px 20px; font-size: 13px; color: #94a3b8; background: #0b1220; border-top: 1px solid rgba(148,163,184,0.15); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.02em;">
-    Bity — the first known Bitcoin mascot, revealed at 48:33 in the documentary. <span style="color:#67e8f9;">Image credit: "Finding Satoshi" (2026), findingsatoshi.com</span>
-  </figcaption>
-</figure>
-
-<p>The board lays out the design process with striking clarity. Pinned around the central "FINAL RESULT" sketch are a series of rejected concepts — a <strong>"Fast & Futuristic"</strong> running bitcoin, a <strong>"Friendly &amp; Minimal"</strong> round variant, a caped <strong>"Timeless &amp; Iconic"</strong> version, and a <strong>"Global &amp; Connected"</strong> bitcoin orbiting a network diagram. In the bottom-right corner, a yellow sticky note simply reads: <em>"Found in Satoshi's things — 2008–2009."</em></p>
-
-<h2>A Mascot That Never Made It Out</h2>
-
-<p>According to the film, Bity was never released, never published online, and never referenced in any known Bitcoin forum post or mailing-list message. The filmmakers frame the discovery as a small but telling artifact — evidence that whoever was behind Satoshi Nakamoto considered, at least briefly, giving the protocol a <em>face</em>.</p>
-
-<p>The concept notes on the board spell out the design philosophy in a single red-inked heading: <strong>CONCEPT</strong> — <em>"Exploring different ideas to find a mascot that represents Bitcoin's values and mission."</em> Beneath the chosen mascot, a handwritten caption reads: <em>"The chosen mascot. Simple, friendly and memorable."</em></p>
-
-<p>A second note, labeled <strong>KEY TRAITS</strong>, lists the qualities the designer was aiming for:</p>
-
-<ul>
-  <li><strong>Trustworthy</strong></li>
-  <li><strong>Innovative</strong></li>
-  <li><strong>Accessible</strong></li>
-  <li><strong>Decentralized</strong></li>
-  <li><strong>Global</strong></li>
-  <li><strong>For everyone</strong></li>
-</ul>
-
-<p>A smaller panel on the board — labeled <em>"Personality sketches"</em> — shows Bity in three moods: a gloved, waving version; a cross-legged, meditating version; and a smaller, shy variant peeking out from behind a curve. A fourth panel, titled <em>"Expression ideas,"</em> lays out how Bity might communicate without words: a speech bubble, a surprised look, a closed-eyed calm, and a glowing variant.</p>
-
-<h2>Why This Matters</h2>
-
-<blockquote>"It doesn't change Bitcoin. It doesn't change the code. But it changes how we think about the person — or people — who started this. Whoever they were, they cared enough to sit down and try to draw a face for it." — William D. Cohan, in the film</blockquote>
-
-<p>For more than fifteen years, Bitcoin has lived almost entirely as a technical and financial artifact — a protocol, a whitepaper, a chain of blocks. It has no official logo committee, no brand guidelines, and no mascot. The orange "₿" symbol, which became the de facto visual identity for the asset, was itself adopted informally by the community long after Satoshi's disappearance.</p>
-
-<p>The discovery of Bity, if accepted at face value, suggests that the earliest thinking around Bitcoin was not only technical but also — even briefly — <em>human</em>. A character. A personality. A small, round, smiling face meant to make a radical financial experiment feel approachable to ordinary people.</p>
-
-<h2>Community Reaction</h2>
-
-<p>Within minutes of the 48:33 scene leaking in clips across social media, the crypto community responded with the kind of energy usually reserved for halving events. On X, the hashtag <strong>#Bity</strong> began trending alongside <strong>#FindingSatoshi</strong>, with fan art, merchandise mock-ups, and meme edits appearing in real time.</p>
-
-<p>Prominent early Bitcoiners weighed in quickly. Several noted that while the authenticity of the sketches will inevitably be debated, the <em>spirit</em> of the character — playful, minimalist, and unmistakably rooted in the early Bitcoin aesthetic — feels right for the era it supposedly came from.</p>
-
-<blockquote>"If Satoshi really did doodle a mascot and then decided not to ship it, that's maybe the most Satoshi thing I've ever heard." — Jameson Lopp, paraphrased from a post-screening reaction</blockquote>
-
-<h2>What the Filmmakers Say</h2>
-
-<p>The documentary — produced alongside investigators at <strong>Quest Research &amp; Investigations</strong> — treats the Bity discovery carefully. The filmmakers do not claim the sketches are definitively by Satoshi. Instead, they frame them as <em>"recovered from materials consistent with Satoshi-era files,"</em> and leave the final judgment to the viewer.</p>
-
-<p>The decision to show the mascot at all was, according to the film's own narration, not taken lightly. Cohan describes the moment as <em>"a small piece of humanity in a story that has, for too long, been told as pure cryptography."</em></p>
-
-<h2>A New Chapter for Bitcoin Iconography</h2>
-
-<p>Whether or not Bity is eventually embraced by the community, the mascot's on-screen debut marks a genuine first. Never before has a character purporting to be an original Bitcoin mascot been shown in a public film — let alone one tied directly to the investigation into Satoshi's identity.</p>
-
-<p>For some, the reveal will feel like a long-overdue emotional anchor for an asset class that has spent most of its life defined by charts, code, and controversy. For others, it will simply be a charming historical footnote — a tiny, round face that was almost the public avatar of the most consequential financial invention of the 21st century.</p>
-
-<p>Either way, for a few seconds at the 48-minute mark of <strong>"Finding Satoshi,"</strong> Bitcoin had a face. And for a community that has spent years searching for its creator, even a cartoon smile feels, for now, like an answer.</p>`,
-    category: "Technology",
-    author: "Marcus Webb",
-    authorRole: "Crypto & Culture Correspondent",
-    publishedAt: "2026-04-22T16:30:00Z",
-    readTime: 8,
-    imageId: 104,
-    imageUrl: "/images/Bity.jpg",
-    featured: true,
-    trending: true,
-    tags: ["bitcoin", "satoshi", "finding-satoshi", "documentary", "bity", "mascot", "crypto", "william-cohan", "tyler-maroney"],
-  },
-  {
-    id: 101,
-    slug: "rare-leopon-born-at-golden-canopy-zoo-stuns-experts-and-visitors",
-    title: "Rare Leopon Born at Golden Canopy Zoo Stuns Experts and Visitors",
-    excerpt: "Golden Canopy Zoo announces the birth of a rare leopon — a hybrid offspring of a male leopard and a lioness — marking one of the few documented cases of its kind in recent years.",
-    content: `<p>In a remarkable and unexpected event, Golden Canopy Zoo announced the birth of a <strong>rare leopon</strong>, a hybrid offspring of a male leopard and a lioness, marking one of the few documented cases of its kind in recent years.</p>
-
-<p>The cub, named <strong>Kael</strong>, was born in the early hours of March 19 and weighed approximately <strong>1.4 kilograms (3.1 pounds)</strong> at birth — slightly larger than an average leopard cub but smaller than a typical lion cub. Zoo veterinarians report that Kael is in stable condition and has already begun nursing under close supervision.</p>
-
-<h2>An Extraordinary Biological Event</h2>
-
-<p>Leopons are extremely rare in captivity and virtually nonexistent in the wild, as lions and leopards inhabit different regions and exhibit distinct behaviors that prevent natural interbreeding. According to zoologists at Golden Canopy Zoo, this birth was not part of a planned breeding program but occurred due to an unusual lapse in enclosure separation protocols, now under internal review.</p>
-
-<blockquote>"From a biological standpoint, this is an extraordinary event. Kael presents a fascinating combination of traits — early observations show a lion-like skeletal structure and limb strength, paired with a distinct rosette-patterned coat inherited from the leopard lineage." — Zoo's lead wildlife specialist</blockquote>
-
-<p>At just a day old, Kael already displays notable physical characteristics:</p>
-
-<ul>
-<li>A <strong>broad head and developing muscular frame</strong> typical of lion cubs</li>
-<li>A <strong>sleek, spotted coat</strong> with clearly defined leopard rosettes</li>
-<li>A <strong>long tail with a slight tuft</strong>, suggesting mixed lineage traits</li>
-</ul>
-
-<h2>Behavioral Observations</h2>
-
-<p>Behaviorally, caretakers have observed that the cub is unusually alert and responsive, exhibiting quick, precise movements more characteristic of leopard cubs, while maintaining a calm and steady temperament often associated with lions.</p>
-
-<p>Zoo officials estimate that if Kael develops normally, he could reach a weight of <strong>90–140 kilograms (198–308 pounds)</strong> in adulthood, depending on which parental traits become more dominant. However, experts caution that hybrid animals often face <strong>health complications</strong>, including developmental challenges and reduced lifespans.</p>
-
-<h2>Scientific Interest and Ethical Debate</h2>
-
-<p>Despite these concerns, Kael has already become a focal point of attention for both scientists and visitors. The zoo has restricted public access for now, allowing only veterinary staff and researchers to monitor his development closely.</p>
-
-<blockquote>"While this is undeniably a rare and captivating occurrence, our priority is the animal's welfare. We are committed to ensuring Kael receives the highest level of care and monitoring." — Golden Canopy Zoo official release</blockquote>
-
-<p>The birth has sparked renewed discussion in the scientific community regarding hybridization in big cats — a practice widely discouraged in modern conservation due to ethical considerations and lack of ecological value.</p>
-
-<p>Still, for now, Kael stands as a living anomaly — a creature that blends the stealth of a leopard with the power of a lion, offering a rare glimpse into the complex possibilities of feline genetics.</p>
-
-<p>As one visitor remarked after hearing the news: <em>"It's like seeing two kings of the wild combined into one. You don't expect something like this to exist — but somehow, it does."</em></p>`,
-    category: "Science",
-    author: "Elena Marsh",
-    authorRole: "Wildlife & Science Correspondent",
-    publishedAt: "2026-04-20T08:00:00Z",
-    readTime: 6,
-    imageId: 1074,
-    imageUrl: "/images/leopon-kael.png",
-    featured: true,
-    trending: true,
-    tags: ["leopon", "hybrid", "big-cats", "zoo", "wildlife", "genetics", "golden-canopy-zoo"],
-  },
   {
     id: 1,
     slug: "global-climate-summit-reaches-historic-agreement-in-geneva",

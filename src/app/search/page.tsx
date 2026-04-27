@@ -5,8 +5,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Search - PulseWire",
-  description: "Search PulseWire for articles, topics, and more.",
+  title: "Search · PrimeTime Global News",
+  description:
+    "Search the PrimeTime Global News archive for articles, investigations, topics, and authors.",
 };
 
 export default async function SearchPage({
@@ -22,7 +23,7 @@ export default async function SearchPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-[11px] text-slate-500 mb-6 uppercase tracking-widest font-mono">
-        <Link href="/" className="hover:text-cyan-400 transition-colors">
+        <Link href="/" className="hover:text-gold-400 transition-colors">
           Home
         </Link>
         <span className="text-ink-700">/</span>
@@ -30,10 +31,12 @@ export default async function SearchPage({
       </nav>
 
       <div className="mb-10">
-        <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em] font-mono">
-          // Query
+        <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.32em] font-mono">
+          The Archive
         </span>
-        <h1 className="text-4xl font-black text-white mb-6 mt-2 tracking-tight uppercase">Search</h1>
+        <h1 className="font-display text-5xl lg:text-6xl font-bold text-parchment mb-6 mt-2 tracking-[-0.03em] leading-[1]">
+          <em className="italic font-medium text-gold-400">Search</em> the archive
+        </h1>
         <div className="max-w-2xl">
           <SearchBar />
         </div>
@@ -44,14 +47,14 @@ export default async function SearchPage({
           <p className="text-slate-400 font-mono text-sm">
             {results.length > 0 ? (
               <>
-                Found <span className="font-semibold text-cyan-400">{results.length}</span>{" "}
+                Found <span className="font-semibold text-gold-400">{results.length}</span>{" "}
                 {results.length === 1 ? "result" : "results"} for{" "}
-                <span className="font-semibold text-white">&ldquo;{query}&rdquo;</span>
+                <span className="font-semibold text-parchment">&ldquo;{query}&rdquo;</span>
               </>
             ) : (
               <>
                 No results found for{" "}
-                <span className="font-semibold text-white">&ldquo;{query}&rdquo;</span>.
+                <span className="font-semibold text-parchment">&ldquo;{query}&rdquo;</span>.
                 Try different keywords.
               </>
             )}

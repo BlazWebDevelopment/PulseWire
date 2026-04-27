@@ -1,31 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1220"/>
-      <stop offset="100%" stop-color="#000000"/>
+    <linearGradient id="pt-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f1f23"/>
+      <stop offset="100%" stop-color="#09090a"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#67e8f9"/>
+    <linearGradient id="pt-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="55%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
     </linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="0.6" result="b"/>
+    <filter id="pt-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="0.55" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
-  <rect x="2.5" y="2.5" width="27" height="27" rx="4.5" fill="none" stroke="#1f2937" stroke-width="1"/>
-  <rect x="5" y="7" width="2.2" height="18" rx="0.4" fill="#e4e4e7"/>
-  <path d="M9 16 L12 16 L14 7.5 L17 24.5 L20 10.5 L22.5 16 L27 16"
-        fill="none"
-        stroke="url(#accent)"
-        stroke-width="2.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        filter="url(#glow)"/>
-  <circle cx="27" cy="16" r="1.6" fill="#22d3ee"/>
-  <rect x="2.5" y="26.5" width="27" height="1" fill="url(#accent)" opacity="0.35"/>
+  <rect width="32" height="32" rx="7" fill="url(#pt-bg)"/>
+  <rect x="2" y="2" width="28" height="28" rx="5.5" fill="none" stroke="rgba(251,191,36,0.18)" stroke-width="1"/>
+  <path
+    d="M8 7 L13 7 A6 6 0 0 1 13 19 L12 19 L12 25 L8 25 Z M12 11 L12 15 A2 2 0 0 1 12 11 Z"
+    fill="url(#pt-gold)"
+    fill-rule="evenodd"
+    filter="url(#pt-glow)"
+  />
+  <rect x="17.5" y="19.5" width="9" height="1.4" fill="url(#pt-gold)" opacity="0.85"/>
+  <rect x="17.5" y="22" width="6" height="1.2" fill="url(#pt-gold)" opacity="0.55"/>
+  <circle cx="24.5" cy="8.5" r="1.8" fill="#ef4444"/>
+  <circle cx="24.5" cy="8.5" r="3.1" fill="none" stroke="#ef4444" stroke-width="0.5" opacity="0.4"/>
+  <rect x="2" y="26.5" width="28" height="1.2" fill="url(#pt-gold)" opacity="0.6"/>
 </svg>

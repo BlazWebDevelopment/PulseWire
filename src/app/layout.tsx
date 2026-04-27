@@ -1,13 +1,35 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+const SITE_NAME = "PrimeTime Global News";
+const SITE_TITLE =
+  "PrimeTime Global News — Nightly Dispatch, Investigations & Deep Analysis";
+const SITE_DESCRIPTION =
+  "PrimeTime Global News is an editorial-grade newsroom delivering nightly dispatches, investigative journalism, and deep analysis across world affairs, markets, technology, politics, culture, and science.";
+
 export const metadata: Metadata = {
-  title: "PulseWire // Breaking News, Latest Stories & In-Depth Analysis",
-  description:
-    "PulseWire delivers breaking news, investigative journalism, and in-depth analysis across world affairs, technology, politics, science, and more.",
-  applicationName: "PulseWire",
+  metadataBase: new URL("https://primetimeglobalnews.com"),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "PrimeTime Global News",
+    "global news",
+    "world news",
+    "nightly report",
+    "investigative journalism",
+    "world affairs",
+    "politics",
+    "markets",
+    "technology",
+    "analysis",
+    "dispatch",
+  ],
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -17,28 +39,33 @@ export const metadata: Metadata = {
     apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "PulseWire // Breaking News, Latest Stories & In-Depth Analysis",
-    description:
-      "PulseWire delivers breaking news, investigative journalism, and in-depth analysis across world affairs, technology, politics, science, and more.",
-    siteName: "PulseWire",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
     type: "website",
+    locale: "en_US",
     images: [
       {
         url: "/icon.svg",
         width: 512,
         height: 512,
-        alt: "PulseWire",
+        alt: SITE_NAME,
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "PulseWire // Breaking News, Latest Stories & In-Depth Analysis",
-    description:
-      "PulseWire delivers breaking news, investigative journalism, and in-depth analysis across world affairs, technology, politics, science, and more.",
-    site: "@pulsewire",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    site: "@primetimeglobalnews",
+    creator: "@primetimeglobalnews",
     images: ["/icon.svg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#09090a",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -56,11 +83,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Geist+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-black text-slate-200 font-sans antialiased min-h-screen">
+      <body className="bg-ink-950 text-parchment font-sans antialiased min-h-screen">
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

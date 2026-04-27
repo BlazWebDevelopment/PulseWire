@@ -8,23 +8,34 @@ import { SearchBar } from "./SearchBar";
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0 group">
-      <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-sm bg-black border border-ink-700 overflow-hidden transition-colors group-hover:border-cyan-400/60">
-        <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(34,211,238,0.12),transparent_50%)]" />
-        <svg className="relative w-6 h-6" viewBox="0 0 32 32" fill="none">
-          <rect x="6" y="8" width="2" height="16" fill="#e4e4e7" />
+      <span className="relative inline-flex items-center justify-center w-11 h-11 rounded-md bg-ink-900 border border-ink-700 overflow-hidden transition-colors group-hover:border-gold-400/60 shadow-[0_1px_0_rgba(251,191,36,0.06)_inset]">
+        <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(251,191,36,0.14),transparent_55%)]" />
+        <svg className="relative w-7 h-7" viewBox="0 0 32 32" fill="none">
+          <defs>
+            <linearGradient id="hdr-gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#fde68a" />
+              <stop offset="60%" stopColor="#fbbf24" />
+              <stop offset="100%" stopColor="#d97706" />
+            </linearGradient>
+          </defs>
           <path
-            d="M10 16 L13 16 L15 9 L18 24 L21 11 L23 16 L27 16"
-            stroke="#22d3ee"
-            strokeWidth="1.8"
-            fill="none"
-            strokeLinecap="square"
-            strokeLinejoin="miter"
+            d="M8 7 L13 7 A6 6 0 0 1 13 19 L12 19 L12 25 L8 25 Z M12 11 L12 15 A2 2 0 0 1 12 11 Z"
+            fill="url(#hdr-gold)"
+            fillRule="evenodd"
           />
+          <rect x="17.5" y="19.5" width="9" height="1.4" fill="url(#hdr-gold)" opacity="0.85" />
+          <rect x="17.5" y="22" width="6" height="1.2" fill="url(#hdr-gold)" opacity="0.55" />
+          <circle cx="24.5" cy="8.5" r="1.8" fill="#ef4444" />
         </svg>
-        <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" />
+        <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/70 to-transparent" />
       </span>
-      <span className="text-[1.3rem] font-black tracking-[0.01em] text-white leading-none uppercase">
-        Pulse<span className="text-cyan-400">Wire</span>
+      <span className="flex flex-col leading-none">
+        <span className="font-sans text-[1.35rem] font-black tracking-[-0.035em] text-parchment leading-none">
+          PrimeTime<span className="text-gold-400">.</span>
+        </span>
+        <span className="mt-1 text-[0.6rem] font-medium uppercase tracking-[0.42em] text-slate-500 font-mono">
+          Global News
+        </span>
       </span>
     </Link>
   );
@@ -35,16 +46,21 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-ink-700/80 supports-[backdrop-filter]:bg-black/70">
+    <header className="sticky top-0 z-50 bg-ink-950/85 backdrop-blur-xl border-b border-ink-700/80 supports-[backdrop-filter]:bg-ink-950/70">
       {/* Top bar */}
       <div className="bg-ink-900/90 text-slate-400 border-b border-ink-700/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9 text-xs font-mono">
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-sm bg-cyan-400 animate-pulse" />
-              <span className="text-cyan-400 uppercase tracking-widest">Live</span>
-              <span className="text-ink-700">|</span>
-              <span className="uppercase tracking-wider text-slate-500">
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-60" />
+                <span className="relative w-2 h-2 rounded-full bg-red-500" />
+              </span>
+              <span className="text-red-400 uppercase tracking-[0.25em] font-bold">
+                On Air
+              </span>
+              <span className="text-ink-700">·</span>
+              <span className="uppercase tracking-[0.18em] text-slate-500">
                 {new Date().toLocaleDateString("en-US", {
                   weekday: "short",
                   year: "numeric",
@@ -56,10 +72,10 @@ export function Header() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://x.com/pulsewire"
+              href="https://x.com/primetimeglobalnews"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 uppercase tracking-wider"
+              className="text-slate-400 hover:text-gold-400 transition-colors flex items-center gap-1.5 uppercase tracking-[0.18em]"
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -72,7 +88,7 @@ export function Header() {
 
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[74px]">
           <Logo />
 
           {/* Desktop nav */}
@@ -81,13 +97,13 @@ export function Header() {
               <Link
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
-                className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white transition-colors rounded-sm hover:bg-ink-800"
+                className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 hover:text-parchment transition-colors rounded-sm hover:bg-ink-800"
               >
                 {cat}
               </Link>
             ))}
             <div className="relative group">
-              <button className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white transition-colors rounded-sm hover:bg-ink-800 flex items-center gap-1">
+              <button className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 hover:text-parchment transition-colors rounded-sm hover:bg-ink-800 flex items-center gap-1">
                 More
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -98,7 +114,7 @@ export function Header() {
                   <Link
                     key={cat}
                     href={`/category/${cat.toLowerCase()}`}
-                    className="block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white hover:bg-ink-800"
+                    className="block px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 hover:text-parchment hover:bg-ink-800"
                   >
                     {cat}
                   </Link>
@@ -111,7 +127,7 @@ export function Header() {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 text-slate-400 hover:text-cyan-400 transition-colors rounded-sm hover:bg-ink-800"
+              className="p-2 text-slate-400 hover:text-gold-400 transition-colors rounded-sm hover:bg-ink-800"
               aria-label="Search"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -120,7 +136,7 @@ export function Header() {
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-400 hover:text-cyan-400 transition-colors rounded-sm hover:bg-ink-800"
+              className="lg:hidden p-2 text-slate-400 hover:text-gold-400 transition-colors rounded-sm hover:bg-ink-800"
               aria-label="Menu"
             >
               {mobileMenuOpen ? (
@@ -136,6 +152,9 @@ export function Header() {
           </div>
         </div>
       </div>
+
+      {/* gold hairline under header */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
 
       {/* Search bar */}
       {searchOpen && (
@@ -155,7 +174,7 @@ export function Header() {
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white hover:bg-ink-800 rounded-sm"
+                className="block px-3 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 hover:text-parchment hover:bg-ink-800 rounded-sm"
               >
                 {cat}
               </Link>

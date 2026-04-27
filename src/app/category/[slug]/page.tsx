@@ -19,10 +19,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const categoryName = categories.find((c) => c.toLowerCase() === slug);
-  if (!categoryName) return { title: "Category Not Found - PulseWire" };
+  if (!categoryName) return { title: "Desk Not Found · PrimeTime Global News" };
   return {
-    title: `${categoryName} News - PulseWire`,
-    description: `Latest ${categoryName} news, analysis, and in-depth reporting from PulseWire.`,
+    title: `${categoryName} · PrimeTime Global News`,
+    description: `Latest ${categoryName} news, analysis, and in-depth reporting from the PrimeTime Global News newsroom.`,
+    openGraph: {
+      title: `${categoryName} · PrimeTime Global News`,
+      description: `Latest ${categoryName} news, analysis, and in-depth reporting from the PrimeTime Global News newsroom.`,
+      siteName: "PrimeTime Global News",
+    },
   };
 }
 
@@ -48,7 +53,7 @@ export default async function CategoryPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-[11px] text-slate-500 mb-6 uppercase tracking-widest font-mono">
-        <Link href="/" className="hover:text-cyan-400 transition-colors">
+        <Link href="/" className="hover:text-gold-400 transition-colors">
           Home
         </Link>
         <span className="text-ink-700">/</span>
@@ -57,16 +62,16 @@ export default async function CategoryPage({
 
       {/* Category header */}
       <div className="mb-10">
-        <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em] font-mono">
-          // Category
+        <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.32em] font-mono">
+          The {categoryName} Desk
         </span>
-        <h1 className="text-4xl sm:text-5xl font-black text-white mb-3 mt-2 tracking-tight uppercase">
-          {categoryName}
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-parchment mb-3 mt-3 tracking-[-0.03em] leading-[0.95]">
+          {categoryName}<span className="text-gold-400">.</span>
         </h1>
-        <p className="text-base text-slate-400">
-          Latest {categoryName.toLowerCase()} news, analysis, and in-depth reporting.
+        <p className="font-display text-base lg:text-lg text-slate-400 font-normal">
+          Latest {categoryName.toLowerCase()} dispatches, analysis, and in-depth reporting.
         </p>
-        <div className="h-px w-20 bg-cyan-400 mt-4" />
+        <div className="h-px w-24 bg-gold-400 mt-5" />
       </div>
 
       {/* Hero + top articles */}
@@ -86,9 +91,9 @@ export default async function CategoryPage({
         <>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <span className="w-1 h-7 rounded-sm bg-cyan-400" />
-              <h2 className="text-2xl font-black text-white tracking-tight uppercase">
-                More {categoryName} Stories
+              <span className="w-1 h-7 rounded-sm bg-gold-400" />
+              <h2 className="font-display text-[2rem] sm:text-[2.4rem] font-bold text-parchment tracking-[-0.025em] leading-[1]">
+                More <em className="italic font-medium text-gold-400">{categoryName}</em> stories
               </h2>
             </div>
             <div className="h-px flex-1 bg-ink-700/70 ml-6" />
@@ -103,9 +108,9 @@ export default async function CategoryPage({
 
       {/* Other categories */}
       <section className="mt-16 pt-10 border-t border-ink-700/70">
-        <h2 className="text-sm font-black text-white mb-4 uppercase tracking-[0.2em] flex items-center gap-2">
-          <span className="w-4 h-px bg-cyan-400" />
-          Explore Other Categories
+        <h2 className="font-sans text-sm font-semibold text-parchment mb-4 uppercase tracking-[0.24em] flex items-center gap-2">
+          <span className="w-4 h-px bg-gold-400" />
+          Explore Other Desks
         </h2>
         <div className="flex flex-wrap gap-2">
           {categories
@@ -114,7 +119,7 @@ export default async function CategoryPage({
               <Link
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
-                className="px-4 py-2 bg-ink-900 text-slate-300 text-xs font-bold uppercase tracking-widest rounded-sm ring-1 ring-ink-700 hover:bg-cyan-400 hover:ring-cyan-400 hover:text-black transition-colors font-mono"
+                className="px-4 py-2 bg-ink-900 text-slate-300 text-xs font-bold uppercase tracking-[0.22em] rounded-sm ring-1 ring-ink-700 hover:bg-gold-400 hover:ring-gold-400 hover:text-ink-950 transition-colors font-mono"
               >
                 {cat}
               </Link>

@@ -17,20 +17,20 @@ import Link from "next/link";
 
 function SectionHeader({ title, href }: { title: string; href?: string }) {
   return (
-    <div className="flex items-center justify-between mb-6">
-      <div className="flex items-center gap-3">
-        <span className="w-1 h-7 rounded-sm bg-cyan-400" />
-        <h2 className="text-2xl font-black text-white tracking-tight uppercase">{title}</h2>
+    <div className="flex items-end justify-between mb-6 pb-3 border-b border-ink-700/70">
+      <div className="flex items-end gap-3">
+        <span className="w-1 h-9 rounded-sm bg-gold-400 mb-2" />
+        <h2 className="font-display text-[2rem] sm:text-[2.4rem] font-bold text-parchment tracking-[-0.025em] leading-[1]">
+          {title}
+        </h2>
       </div>
-      {href ? (
+      {href && (
         <Link
           href={href}
-          className="text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-400 hover:text-white transition-colors font-mono"
+          className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-400 hover:text-gold-300 transition-colors font-mono pb-2"
         >
           View all &rarr;
         </Link>
-      ) : (
-        <div className="h-px flex-1 bg-ink-700/70 ml-6" />
       )}
     </div>
   );
@@ -63,7 +63,7 @@ export default function HomePage() {
               <Link
                 key={article.id}
                 href={`/article/${article.slug}`}
-                className="group block relative overflow-hidden rounded-sm bg-ink-900 aspect-[16/10] flex-1 ring-1 ring-ink-700/80 shadow-xl shadow-black/60 hover:ring-cyan-400/50 transition-all"
+                className="group block relative overflow-hidden rounded-sm bg-ink-900 aspect-[16/10] flex-1 ring-1 ring-ink-700/80 shadow-xl shadow-black/60 hover:ring-gold-400/50 transition-all"
               >
                 <img
                   src={getArticleImageUrl(article, 600, 375)}
@@ -72,12 +72,12 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute top-3 left-3">
-                  <span className="inline-block px-2 py-0.5 bg-black/80 backdrop-blur border border-cyan-400/50 text-cyan-400 text-[9px] font-bold uppercase tracking-[0.18em] rounded-sm font-mono">
+                  <span className="inline-block px-2 py-0.5 bg-black/80 backdrop-blur border border-gold-400/50 text-gold-400 text-[9px] font-bold uppercase tracking-[0.18em] rounded-sm font-mono">
                     {article.category}
                   </span>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors leading-snug line-clamp-2">
+                  <h3 className="text-base font-bold text-white group-hover:text-gold-400 transition-colors leading-snug line-clamp-2">
                     {article.title}
                   </h3>
                 </div>
@@ -111,22 +111,22 @@ export default function HomePage() {
 
             {/* X Follow Widget */}
             <div className="mt-8 rounded-sm p-6 text-center bg-ink-900 ring-1 ring-ink-700/70 relative overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-sm bg-cyan-400/10 blur-3xl" />
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-sm bg-gold-400/10 blur-3xl" />
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/60 to-transparent" />
               <svg className="relative w-7 h-7 text-white mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              <p className="relative text-white font-bold mb-1 uppercase tracking-widest text-sm">Follow PulseWire</p>
+              <p className="relative font-sans text-parchment font-semibold mb-1 uppercase tracking-[0.24em] text-sm">Follow PrimeTime</p>
               <p className="relative text-slate-500 text-xs mb-4 font-mono">
-                Get breaking news and updates
+                Dispatches, breaking alerts, commentary.
               </p>
               <a
-                href="https://x.com/pulsewire"
+                href="https://x.com/primetimeglobalnews"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block px-6 py-2.5 bg-white hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-widest rounded-sm transition-colors"
+                className="relative inline-block px-6 py-2.5 bg-gold-400 hover:bg-gold-300 text-ink-950 text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
               >
-                @PulseWire
+                @PrimeTimeGlobalNews
               </a>
             </div>
           </div>
