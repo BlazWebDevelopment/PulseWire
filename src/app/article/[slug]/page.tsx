@@ -76,7 +76,7 @@ export default async function ArticlePage({
     article.title,
   )}&url=${encodeURIComponent(shareUrl)}`;
 
-  const showHero = Boolean(article.imageUrl) && !article.hideHero;
+  const showHero = !article.hideHero;
 
   return (
     <>
@@ -154,7 +154,7 @@ export default async function ArticlePage({
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
               <figure className="relative overflow-hidden rounded-sm ring-1 ring-ink-700/70 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] bg-ink-900">
                 <img
-                  src={article.imageUrl}
+                  src={getArticleImageUrl(article, 1600, 1000)}
                   alt={article.title}
                   className="w-full max-h-[620px] object-contain mx-auto block"
                 />

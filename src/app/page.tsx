@@ -68,7 +68,7 @@ export default function HomePage() {
                 <img
                   src={getArticleImageUrl(article, 600, 375)}
                   alt={article.title}
-                  className={`absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500 ${article.imageUrl ? "object-top" : ""}`}
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-70 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute top-3 left-3">
