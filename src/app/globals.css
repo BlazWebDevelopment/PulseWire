@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Ensure all app + component + data sources are scanned (Tailwind v4 automatic
+   detection can miss files on some Windows / path layouts). */
+@source "../**/*.{js,ts,jsx,tsx}";
+
 @theme {
   /* Primary brand accent — electric blue.
      The existing class names "gold-*" are kept and remapped to blue

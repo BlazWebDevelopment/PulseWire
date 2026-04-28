@@ -13,6 +13,7 @@ import {
   ArticleCardCompact,
 } from "@/components/ArticleCard";
 import { BreakingTicker } from "@/components/BreakingTicker";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import Link from "next/link";
 
 function SectionHeader({ title, href }: { title: string; href?: string }) {
@@ -109,25 +110,19 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* X Follow Widget */}
-            <div className="mt-8 rounded-sm p-6 text-center bg-ink-900 ring-1 ring-ink-700/70 relative overflow-hidden">
+            {/* Newsletter (local success only; no outbound email) */}
+            <div className="mt-8 rounded-sm p-6 bg-ink-900 ring-1 ring-ink-700/70 relative overflow-hidden">
               <div className="absolute -top-10 -right-10 w-32 h-32 rounded-sm bg-gold-400/10 blur-3xl" />
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/60 to-transparent" />
-              <svg className="relative w-7 h-7 text-white mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              <p className="relative font-sans text-parchment font-semibold mb-1 uppercase tracking-[0.24em] text-sm">Follow News NFTs</p>
-              <p className="relative text-slate-500 text-xs mb-4 font-mono">
-                Drops, on-chain alerts, market signals.
+              <p className="relative font-sans text-parchment font-semibold mb-1 uppercase tracking-[0.24em] text-sm">
+                The Daily Block
               </p>
-              <a
-                href="https://x.com/newsnfts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-block px-6 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
-              >
-                @NewsNFTs
-              </a>
+              <p className="relative text-slate-500 text-xs mb-4 font-mono">
+                Morning brief — one email, 8am UTC.
+              </p>
+              <div className="relative">
+                <NewsletterForm variant="footer" />
+              </div>
             </div>
           </div>
         </div>

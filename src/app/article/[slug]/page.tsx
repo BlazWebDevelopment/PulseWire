@@ -9,6 +9,7 @@ import {
 } from "@/data/articles";
 import { ArticleCardVertical } from "@/components/ArticleCard";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import type { Metadata } from "next";
 
 function formatDate(dateStr: string) {
@@ -51,7 +52,6 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      site: "@newsnfts",
     },
   };
 }
@@ -72,9 +72,6 @@ export default async function ArticlePage({
     .slice(0, 4);
 
   const shareUrl = `https://newsnfts.io/article/${article.slug}`;
-  const shareIntentX = `https://x.com/intent/tweet?text=${encodeURIComponent(
-    article.title,
-  )}&url=${encodeURIComponent(shareUrl)}`;
 
   const showHero = !article.hideHero;
 
@@ -175,17 +172,6 @@ export default async function ArticlePage({
               Share
             </span>
             <a
-              href={shareIntentX}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-ink-900 ring-1 ring-ink-700 flex items-center justify-center text-slate-400 hover:text-gold-400 hover:ring-gold-400/60 transition-all"
-              aria-label="Share on X"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-            <a
               href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(article.title)}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -252,17 +238,6 @@ export default async function ArticlePage({
                 {article.authorRole}
               </p>
             </div>
-            <a
-              href={shareIntentX}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              Share on X
-            </a>
           </div>
         </div>
 
@@ -381,20 +356,7 @@ export default async function ArticlePage({
                 One email. Sent at 8am UTC. No noise.
               </p>
             </div>
-            <form className="md:col-span-2 flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="you@wallet.eth"
-                aria-label="Email address"
-                className="w-full px-4 py-3 bg-ink-950/70 border border-ink-700 focus:border-gold-400/70 focus:outline-none rounded-sm text-sm text-parchment placeholder:text-slate-600 font-mono"
-              />
-              <button
-                type="button"
-                className="w-full px-4 py-3 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm variant="article" />
           </div>
         </div>
       </section>

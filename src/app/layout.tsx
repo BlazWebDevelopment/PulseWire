@@ -66,8 +66,6 @@ export const metadata: Metadata = {
     card: "summary",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    site: "@newsnfts",
-    creator: "@newsnfts",
     images: ["/icon.svg"],
   },
 };

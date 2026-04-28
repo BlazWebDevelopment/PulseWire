@@ -46,12 +46,10 @@ Stylistic rules:
 
 ## Image keywords
 
-Each `imageUrl` looks like `img("keyword1,keyword2", 5042)`. The string is fed to loremflickr to fetch an actual photo themed around those keywords. Pick keywords that:
+Article images are generated automatically by `getArticleImageUrl()` (crypto-themed images hosted on the internet via Unsplash Source), using the story’s existing `imageId` + `slug`.
 
-- Belong to your assigned keyword pool (see your launch prompt).
-- Visually fit the specific story (e.g., an article about a senate hearing should pull a senate-themed image, not a generic abstract one).
-- Are unique within your block (no duplicate keyword strings across your 20 articles).
-- Use 1, 2, or 3 keywords joined with commas, no spaces — e.g. `"frankfurt,vault"` or `"datacenter,immersion,pipes"`.
+- If you add `imageUrl`, it should be a **direct image URL** (`https://...jpg` / `png` / etc.) and should be **crypto-themed**.
+- Otherwise, omit `imageUrl` entirely and let the helper generate the hero/thumb art.
 
 ## Output
 
@@ -63,7 +61,7 @@ Write your finished 20 article object literals to your assigned fragment file pa
 - No surrounding `[` `]` brackets.
 - No `export`, no `import`, no comment banners, no helper definitions.
 - No category banner comments.
-- The `img("...", id)` syntax must be preserved exactly — you are not inlining the URL, just using the helper call.
+- If present, `imageUrl` must be a direct image URL string; otherwise omit it.
 
 Example shape (showing 2 of 20 — your file should have 20):
 
@@ -80,7 +78,7 @@ Example shape (showing 2 of 20 — your file should have 20):
     publishedAt: "2024-01-11T16:30:00Z",
     readTime: 5,
     imageId: 5001,
-    imageUrl: img("etf,nyse", 5001),
+    imageUrl: "https://example.com/crypto-themed-image.jpg",
     featured: true,
     trending: true,
     tags: ["bitcoin", "etf", "sec", "approval", "institutions"],

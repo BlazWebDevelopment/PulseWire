@@ -1,4 +1,6 @@
-﻿export type Article = {
+﻿import { ARTICLE_IMAGE_BASES } from "./articleImageBases";
+
+export type Article = {
   id: number;
   slug: string;
   title: string;
@@ -24,14 +26,24 @@
 };
 
 /**
- * Article art uses Picsum Photos with a deterministic seed per story (`imageId` + `slug`).
- * LoremFlickr keyword URLs were removed — Flickr tag search often returned the same cat/kitten
- * shots for unrelated crypto headlines. Picsum yields a stable, distinct image per seed and CDN-sized dimensions.
+ * Article art uses one stable `images.unsplash.com` base URL per article id from
+ * `articleImageBases.ts` (`ARTICLE_IMAGE_BASES`). Explicit `imageUrl`
+ * overrides this when set.
+ *
+ * Avoid `source.unsplash.com`; it can intermittently return 5xx and break dev UX.
  */
 export function getArticleImageUrl(article: Article, width: number, height: number): string {
   if (article.imageUrl) return article.imageUrl;
-  const seed = `${article.imageId}-${article.slug}`;
-  return `https://picsum.photos/seed/${encodeURIComponent(seed)}/${width}/${height}`;
+
+  // One stable Unsplash photo per article id via `articleImageBases.ts` (ids 1–140 map 1:1; others wrap).
+  const pool = ARTICLE_IMAGE_BASES;
+  const n = pool.length;
+  const seed = article.id > 0 ? article.id - 1 : Math.abs(article.imageId);
+  const idx = ((seed % n) + n) % n;
+  const base = pool[idx];
+  const w = Math.max(64, Math.round(width));
+  const h = Math.max(64, Math.round(height));
+  return `${base}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 }
 
 export const categories = [

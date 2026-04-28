@@ -11,7 +11,7 @@ console.log("article count:", ids.length, "range:", Math.min(...ids), "-", Math.
 const slugLines = [...t.matchAll(/^\s{4}slug: "([^"]+)",$/gm)].map((m) => m[1]);
 console.log("slug lines:", slugLines.length);
 const imageIds = [...t.matchAll(/^\s{4}imageId: (\d+),/gm)].map((m) => +m[1]);
-console.log("unique imageIds (loremflickr lock):", new Set(imageIds).size, "/", imageIds.length);
+console.log("unique imageIds:", new Set(imageIds).size, "/", imageIds.length);
 
 const contents = [...t.matchAll(/content:\s*`([\s\S]*?)`,\s*\n/gm)].map((m) => m[1]);
 console.log("content literals parsed:", contents.length);

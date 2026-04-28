@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { categories } from "@/data/articles";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 export function Footer() {
   return (
@@ -60,17 +61,6 @@ export function Footer() {
               NFTs, mining, and the wider crypto economy — for builders,
               traders, and collectors.
             </p>
-            <a
-              href="https://x.com/newsnfts"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-gold-400 transition-colors"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              Follow @NewsNFTs
-            </a>
           </div>
 
           {/* Categories */}
@@ -127,22 +117,7 @@ export function Footer() {
               Every chain, every drop, every flip — distilled into one morning
               brief.
             </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col gap-2"
-            >
-              <input
-                type="email"
-                placeholder="you@wallet.eth"
-                className="px-4 py-2.5 bg-ink-900 border border-ink-700 rounded-sm text-sm text-parchment placeholder:text-slate-600 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/40 font-mono"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm variant="footer" />
           </div>
         </div>
       </div>

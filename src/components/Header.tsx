@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { categories } from "@/data/articles";
 import { SearchBar } from "./SearchBar";
 
@@ -53,45 +53,37 @@ function Logo() {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [topBarDate, setTopBarDate] = useState("");
+
+  useEffect(() => {
+    setTopBarDate(
+      new Date().toLocaleDateString("en-US", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }),
+    );
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-ink-950/85 backdrop-blur-xl border-b border-ink-700/80 supports-[backdrop-filter]:bg-ink-950/70">
       {/* Top bar */}
       <div className="bg-ink-900/90 text-slate-400 border-b border-ink-700/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9 text-xs font-mono">
-          <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-2">
-              <span className="relative flex w-2 h-2">
-                <span className="absolute inset-0 rounded-full bg-gold-400 animate-ping opacity-60" />
-                <span className="relative w-2 h-2 rounded-full bg-gold-400" />
-              </span>
-              <span className="text-gold-400 uppercase tracking-[0.25em] font-bold">
-                Live
-              </span>
-              <span className="text-ink-700">·</span>
-              <span className="uppercase tracking-[0.18em] text-slate-500">
-                {new Date().toLocaleDateString("en-US", {
-                  weekday: "short",
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-9 text-xs font-mono">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative flex w-2 h-2">
+              <span className="absolute inset-0 rounded-full bg-gold-400 animate-ping opacity-60" />
+              <span className="relative w-2 h-2 rounded-full bg-gold-400" />
             </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://x.com/newsnfts"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-gold-400 transition-colors flex items-center gap-1.5 uppercase tracking-[0.18em]"
-            >
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              <span>Follow</span>
-            </a>
-          </div>
+            <span className="text-gold-400 uppercase tracking-[0.25em] font-bold">
+              Live
+            </span>
+            <span className="text-ink-700">·</span>
+            <span className="uppercase tracking-[0.18em] text-slate-500">
+              {topBarDate || "\u2014"}
+            </span>
+          </span>
         </div>
       </div>
 

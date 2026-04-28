@@ -63,7 +63,7 @@ for (let i = 0; i < order.length; i++) {
   const fp = path.join(fragDir, `${name}.txt`);
   let body = fs.readFileSync(fp, "utf8");
   body = fixMojibake(body).trimEnd();
-  // Hero/thumb URLs come from getArticleImageUrl (Picsum seed); drop legacy loremflickr lines.
+  // Hero/thumb URLs come from getArticleImageUrl (Unsplash Source signature); drop legacy fragment imageUrl helper lines.
   body = body
     .split(/\r?\n/)
     .filter((l) => !/^\s*imageUrl:\s*img\(/.test(l))
