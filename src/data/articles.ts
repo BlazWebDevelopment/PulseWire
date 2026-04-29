@@ -2343,6 +2343,24 @@ export const articles: Article[] = [
     trending: true,
     tags: ["solana", "solagram", "dns", "foundation", "ecosystem"],
   },
+  {
+    id: 142,
+    slug: "divine-vine-reboot-launches-public-dicoin-support-favorite-creator",
+    title: "diVine Launches to the Public: A Vine Reboot Returns",
+    excerpt:
+      'A Jack Dorsey-backed Vine reboot called diVine is now publicly available, reviving a massive archive of classic loops while betting on protocol-first social and a creator support currency it calls "diCoin."',
+    content: `<p>A Vine reboot called <strong>diVine</strong> is rolling out to the public, bringing six-second looping video back into the app-store era with a mix of nostalgia and a distinctly 2026 thesis: rebuild short-form around open protocols, keep obvious AI-generated sludge out of the feed, and give viewers a direct way to support creators.</p><p>According to reporting by TechCrunch, diVine launched today on iOS and Android with access to an archive of roughly <strong>500,000 restored Vine videos</strong> spanning nearly <strong>100,000 original creators</strong>. The project was financed by <em>and Other Stuff</em>, a nonprofit formed in 2025 and backed by Twitter co-founder Jack Dorsey, and the build effort focused heavily on reconstructing the video archive and engagement metadata from large backup files.</p><p>The app’s positioning isn’t just “Vine, again.” diVine’s team is pitching it as a reset button for short-form: a tighter format, fewer algorithmic incentives to flood the timeline with synthetic content, and a design that feels closer to early social than the endless-scroll factories that came after.</p><p>One of the more practical product bets is a compilation-style viewing mode. Instead of hunting for one clip at a time, diVine lets you drop into an autoplay stream (for example from a hashtag), then pause to interact when something lands. It’s a small UI change, but it matches how a generation actually consumes old Vines today — stitched together in themed runs.</p><p>diVine is also making an explicit point of filtering out “AI slop.” New clips are expected to be recorded in-app, and uploaded content can be asked to prove how it was made using C2PA provenance signals. That approach won’t solve deepfakes or editing tricks on its own, but it sets a clear product stance: the default feed should feel human-made.</p><p>Under the hood, diVine is built on the open social protocol <strong>Nostr</strong>, with experiments underway to integrate other open protocols over time — including the <strong>AT Protocol</strong> (used by Bluesky) and potentially <strong>ActivityPub</strong> (the protocol behind Mastodon-style networks). The goal is to avoid rebuilding yet another walled garden where creators are locked to a single company’s platform rules.</p><figure><img src="/images/diCoin.png" alt="diVine recharge screen showing diCoin packages" /><figcaption>diVine’s recharge screen.</figcaption></figure><p>diVine says it will use <strong>diCoin</strong> as the in-app way to <strong>support your favorite creator</strong> — a simple currency layer designed for small, direct contributions that can help creators keep publishing new loops.</p><p>For now, diVine has no traditional revenue model and is structured as a public benefit corporation, with early access rolling out through waitlists and invite codes. The bigger question is whether a “small video” format can re-earn cultural relevance in a world that’s grown used to longer clips — but diVine is betting that constraints, done well, are still a feature.</p><p><em>Source:</em> <a href="https://techcrunch.com/2026/04/29/jack-dorsey-backed-vine-reboot-divine-launches-to-public/" target="_blank" rel="noreferrer">TechCrunch</a><em>.</em></p>`,
+    category: "Markets",
+    author: "PulseWire Desk",
+    authorRole: "Apps & Culture",
+    publishedAt: "2026-04-29T12:00:00Z",
+    readTime: 5,
+    imageId: 5142,
+    imageUrl: "/images/diVine.png",
+    featured: true,
+    trending: true,
+    tags: ["divine", "vine", "jack-dorsey", "nostr", "at-protocol", "activitypub", "dicoin", "creators"],
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {
