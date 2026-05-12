@@ -2352,7 +2352,7 @@ export const articles: Article[] = [
     category: "Markets",
     author: "PulseWire Desk",
     authorRole: "Markets & Culture",
-    publishedAt: "2026-05-012T12:30:00Z",
+    publishedAt: "2026-05-12T12:30:00Z",
     readTime: 3,
     imageId: 5142,
     imageUrl: "/images/Bull2.png",
