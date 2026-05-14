@@ -2350,7 +2350,7 @@ export const articles: Article[] = [
     excerpt: "New York's iconic Charging Bull was found defaced with 'Just buy memes' graffiti overnight, turning a Wall Street landmark into the latest flashpoint for internet-driven investing culture.",
     content: `<p>Overnight, one of New York City's most recognizable landmarks became the target of unexpected vandalism. The iconic Charging Bull statue in the Financial District was discovered early this morning defaced with graffiti reading <em>"Just buy memes,"</em> spray-painted along its flank.</p><p>City officials say the vandalism likely occurred in the early hours before dawn, when foot traffic in the area is minimal. By the time workers and early commuters arrived, the message had already drawn a small crowd, with onlookers photographing the unusual sight before authorities cordoned off the area.</p><p>Sanitation crews and conservation specialists were dispatched quickly to begin the cleanup process. Because the statue is made of bronze, officials are taking extra care to remove the paint without damaging the surface. Early reports suggest that the graffiti can be fully removed, though the process may take several hours and involve specialized solvents.</p><p>"This is a well-known public artwork and a symbol of the financial district," a city spokesperson said. "We take incidents like this seriously, and we are working to restore it as quickly as possible."</p><figure><img src="/images/Bull.png" alt="Charging Bull statue with Just Buy Memes graffiti photographed from the street" /><figcaption>A closer view of the graffiti that turned the landmark into a crypto-culture talking point.</figcaption></figure><p>The message itself appears to reference the recent surge in meme-driven investing trends, where online communities rally around certain stocks and digital assets. While some bystanders interpreted the graffiti as a form of social commentary, authorities are treating it strictly as an act of vandalism.</p><p>Police have begun reviewing nearby surveillance footage and are asking anyone with information to come forward. The area surrounding the statue is heavily monitored, and investigators are optimistic that they will be able to identify the individual or individuals responsible.</p><p>For now, barriers remain in place around the statue as cleanup continues. Despite the disruption, tourists and locals alike are still stopping nearby - many reflecting on how even a symbol of financial power isn't immune to the influence of internet culture.</p>`,
     category: "Markets",
-    author: "PulseWire Desk",
+    author: "News NFTs Desk",
     authorRole: "Markets & Culture",
     publishedAt: "2026-05-12T12:30:00Z",
     readTime: 3,
@@ -2404,7 +2404,7 @@ export const articles: Article[] = [
       "A Blockchain.com user spent eight weeks and trillions of password guesses on rented GPUs before Anthropic's Claude surfaced a forgotten 2019 wallet backup on an old college machine—and a notebook password unlocked it, not a break in Bitcoin's cryptography.",
     content: `<p>The owner had been trying for eight weeks to brute-force the password on their current Blockchain.com wallet, testing roughly 3.5 trillion combinations using the btcrecover service on a rented computing chip.</p><p>But don't get caught in the hype as that is not what happened. Anthropic's AI simply helped the owner search their own computer for an old wallet file, which was then decrypted with a password the owner already had written down in a notebook.</p><p>User cprkrn posted the recovery on Wednesday, calling it "the most obvious opening ever" once they figured out what had happened.</p><p>The recovery happened when the user "dumped my whole college computer into Claude" as a last-ditch effort, and the assistant located an old wallet backup from December 2019 that was encrypted with a password the user already had written down in a notebook.</p><p>The old password decrypted the old backup, which contained the same private keys controlling the current funds, since bitcoin private keys never change.</p><p>The password itself was "lol420fuckthePOLICE!*:)" per the user's own X disclosure. Total Vast.ai GPU spend on the failed brute-force attempts was around $15, with the recovery effectively a file search.</p><p>For context, breaking bitcoin's actual cryptography would require either a working quantum computer running Shor's algorithm or a flaw in elliptic-curve cryptography that has not been found in 16 years of public scrutiny.</p><p>CoinDesk's post-quantum security series earlier this year covered the timeline expectations for that threat, with most researchers placing the cryptographically relevant quantum computer at least five to ten years out.</p><p>But the user's experience opens up a further door for AI inside crypto. Forgotten wallets from bitcoin's early years now hold serious value, and recovery tools like btcrecover have existed for years to help users test password variations against encrypted wallet files.</p><p>The problem has always been that most recovery work requires technical expertise that the average lost-bitcoin owner does not have.</p><p>That is where AI assistants can step in. Instead of manually sorting through folders, timestamps, and backup files across years of accumulated drive clutter, owners can hand the search to an LLM and have it identify patterns, narrow the search space, and surface candidate files.</p><p>Millions of bitcoin are believed to remain inaccessible because owners lost passwords, drives, or recovery phrases during the early years.</p><p>With bitcoin trading around $79,000, a forgotten laptop in a closet could be holding six figures. Back up wallet data carefully, store recovery phrases somewhere that is not your memory, and check old hardware before you sell it.</p>`,
     category: "Crypto",
-    author: "PulseWire Desk",
+    author: "News NFTs Desk",
     authorRole: "News Desk",
     publishedAt: "2026-05-16T14:00:00Z",
     readTime: 5,
@@ -2422,7 +2422,7 @@ export const articles: Article[] = [
       "The official Trump memecoin slipped about 5% as Trump Mobile said T1 shipments finally start next week—against a backdrop of repeated phone delays, thin support, and a token still down roughly 90% from its highs.",
     content: `<p>The TRUMP token, the official memecoin of U.S. President Donald Trump, is down 5%, according to CoinDesk market data, as Trump Mobile announced the long awaited T1 handset is set to begin shipments next week.</p><p>As CoinDesk previously reported, neither the Trump Mobile project nor the President's memecoin has gone particularly well. Shipment dates for the handset have been repeatedly delayed — and customer support is limited — while the TRUMP token is down nearly 90%.</p><p>Another question is, what exactly is the T1 Phone? Trump Mobile is a Mobile Virtual Network Operator and doesn't have the ability to design and manufacture its own handset. Instead, it has worked with an outside company to pick a handset and re-skin it to be Trump themed. This kind of arrangement is common; Solana re-skinned the Osom OV-1 for its first Saga phone.</p><p>The Verge got its hands on one of the T1 Phone handsets last month, and concluded that it "sure looks a lot like an HTC U24", a handset that came out in 2024.</p><p>Exactly what company is manufacturing the Trump phone is unclear, as neither HTC nor Trump Mobile would give an answer to The Verge. Trump Mobile has previously confirmed that its phones have final assembly in the U.S. but originate overseas.</p>`,
     category: "Crypto",
-    author: "PulseWire Desk",
+    author: "News NFTs Desk",
     authorRole: "News Desk",
     publishedAt: "2026-05-17T16:00:00Z",
     readTime: 3,
@@ -2438,22 +2438,27 @@ export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
 }
 
+function sortByPublishedAtDesc(list: Article[]): Article[] {
+  return [...list].sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+}
+
 export function getArticlesByCategory(category: string): Article[] {
-  return articles.filter((a) => a.category === category);
+  return sortByPublishedAtDesc(articles.filter((a) => a.category === category));
 }
 
 export function getFeaturedArticles(): Article[] {
-  return articles.filter((a) => a.featured);
+  return sortByPublishedAtDesc(articles.filter((a) => a.featured));
 }
 
 export function getTrendingArticles(): Article[] {
-  return articles.filter((a) => a.trending);
+  return sortByPublishedAtDesc(articles.filter((a) => a.trending));
 }
 
 export function getLatestArticles(count: number): Article[] {
-  return [...articles]
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, count);
+  return sortByPublishedAtDesc(articles).slice(0, count);
 }
 
 export function searchArticles(query: string): Article[] {

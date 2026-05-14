@@ -7,6 +7,7 @@ import {
 } from "@/components/ArticleCard";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 
 export async function generateStaticParams() {
   return categories.map((cat) => ({ slug: cat.toLowerCase() }));
@@ -22,11 +23,11 @@ export async function generateMetadata({
   if (!categoryName) return { title: "Desk Not Found" };
   return {
     title: `${categoryName} Desk`,
-    description: `Latest ${categoryName} news, market data, and on-chain analysis from the News NFTs newsroom.`,
+    description: `Latest ${categoryName} news, market data, and on-chain analysis from the ${SITE_NAME} newsroom.`,
     openGraph: {
-      title: `${categoryName} Desk · News NFTs`,
-      description: `Latest ${categoryName} news, market data, and on-chain analysis from the News NFTs newsroom.`,
-      siteName: "News NFTs",
+      title: `${categoryName} Desk · ${SITE_NAME}`,
+      description: `Latest ${categoryName} news, market data, and on-chain analysis from the ${SITE_NAME} newsroom.`,
+      siteName: SITE_NAME,
     },
   };
 }
@@ -50,55 +51,52 @@ export default async function CategoryPage({
   const moreArticles = categoryArticles.slice(5);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-[11px] text-slate-500 mb-6 uppercase tracking-widest font-mono">
-        <Link href="/" className="hover:text-gold-400 transition-colors">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <nav className="mb-6 flex items-center gap-2 text-[11px] uppercase tracking-widest text-slate-500 font-mono">
+        <Link href="/" className="transition-colors hover:text-gold-500">
           Home
         </Link>
-        <span className="text-ink-700">/</span>
-        <span className="text-slate-200 font-medium">{categoryName}</span>
+        <span className="text-slate-300">/</span>
+        <span className="font-medium text-slate-700">{categoryName}</span>
       </nav>
 
-      {/* Category header */}
-      <div className="mb-10">
-        <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.32em] font-mono">
+      <div className="mb-10 border border-slate-200 bg-white p-8 shadow-[0_22px_50px_-40px_rgba(15,23,42,0.2)] sm:p-10">
+        <span className="text-[10px] font-bold uppercase tracking-[0.32em] text-gold-500 font-mono">
           The {categoryName} Desk
         </span>
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-parchment mb-3 mt-3 tracking-[-0.03em] leading-[0.95]">
-          {categoryName}<span className="text-gold-400">.</span>
+        <h1 className="mt-3 mb-3 font-display text-5xl font-bold leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-7xl">
+          {categoryName}
+          <span className="text-gold-500">.</span>
         </h1>
-        <p className="font-display text-base lg:text-lg text-slate-400 font-normal">
+        <p className="max-w-2xl font-display text-base font-normal text-slate-600 lg:text-lg">
           Latest {categoryName.toLowerCase()} news, market data, and on-chain analysis.
         </p>
-        <div className="h-px w-24 bg-gold-400 mt-5" />
+        <div className="mt-6 h-px w-24 bg-gradient-to-r from-gold-400 to-cyan-400" />
       </div>
 
-      {/* Hero + top articles */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+      <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <ArticleCardLarge article={heroArticle} />
         </div>
-        <div className="lg:col-span-5 divide-y divide-ink-700/70">
+        <div className="grid gap-4 lg:col-span-5">
           {topArticles.map((article) => (
             <ArticleCardMedium key={article.id} article={article} />
           ))}
         </div>
       </div>
 
-      {/* More articles */}
       {moreArticles.length > 0 && (
         <>
-          <div className="flex items-center justify-between mb-6">
+          <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <span className="w-1 h-7 rounded-sm bg-gold-400" />
-              <h2 className="font-display text-[2rem] sm:text-[2.4rem] font-bold text-parchment tracking-[-0.025em] leading-[1]">
-                More <em className="italic font-medium text-gold-400">{categoryName}</em> stories
+              <span className="h-7 w-1 bg-gradient-to-b from-cyan-400 to-gold-400" />
+              <h2 className="font-display text-[2rem] font-bold leading-[1] tracking-[-0.025em] text-slate-950 sm:text-[2.4rem]">
+                More <em className="font-medium italic text-gold-500">{categoryName}</em> stories
               </h2>
             </div>
-            <div className="h-px flex-1 bg-ink-700/70 ml-6" />
+            <div className="ml-6 h-px flex-1 bg-slate-200" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {moreArticles.map((article) => (
               <ArticleCardVertical key={article.id} article={article} />
             ))}
@@ -106,10 +104,9 @@ export default async function CategoryPage({
         </>
       )}
 
-      {/* Other categories */}
-      <section className="mt-16 pt-10 border-t border-ink-700/70">
-        <h2 className="font-sans text-sm font-semibold text-parchment mb-4 uppercase tracking-[0.24em] flex items-center gap-2">
-          <span className="w-4 h-px bg-gold-400" />
+      <section className="mt-16 border border-slate-200 bg-white p-8 shadow-[0_18px_44px_-36px_rgba(15,23,42,0.18)]">
+        <h2 className="mb-4 flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-[0.24em] text-slate-950">
+          <span className="h-px w-4 bg-gold-400" />
           Explore Other Desks
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -119,7 +116,7 @@ export default async function CategoryPage({
               <Link
                 key={cat}
                 href={`/category/${cat.toLowerCase()}`}
-                className="px-4 py-2 bg-ink-900 text-slate-300 text-xs font-bold uppercase tracking-[0.22em] rounded-sm ring-1 ring-ink-700 hover:bg-gold-400 hover:ring-gold-400 hover:text-white transition-colors font-mono"
+                className="border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-slate-600 transition-colors hover:border-gold-300 hover:bg-gold-100 hover:text-slate-950 font-mono"
               >
                 {cat}
               </Link>

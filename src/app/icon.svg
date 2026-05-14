@@ -1,48 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="nn-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1228"/>
-      <stop offset="100%" stop-color="#03060d"/>
+    <linearGradient id="nn-panel" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fbff"/>
     </linearGradient>
-    <linearGradient id="nn-blue" x1="0.1" y1="0" x2="0.9" y2="1">
-      <stop offset="0%" stop-color="#bfdbfe"/>
-      <stop offset="55%" stop-color="#3b82f6"/>
-      <stop offset="100%" stop-color="#1e40af"/>
+    <linearGradient id="nn-mark" x1="16" y1="14" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#2563eb"/>
     </linearGradient>
-    <linearGradient id="nn-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fde68a"/>
-      <stop offset="100%" stop-color="#f59e0b"/>
-    </linearGradient>
-    <filter id="nn-glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="0.5" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
-  <!-- Tile -->
-  <rect width="32" height="32" rx="7" fill="url(#nn-bg)"/>
-  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.4" fill="none" stroke="rgba(59,130,246,0.30)" stroke-width="0.6"/>
+  <rect x="4" y="4" width="56" height="56" rx="10" fill="url(#nn-panel)"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="9.25" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
 
-  <!-- Hexagon outline (NFT / blockchain motif) -->
-  <path d="M16 4.6 L25.5 9.8 L25.5 22.2 L16 27.4 L6.5 22.2 L6.5 9.8 Z"
-        fill="none"
-        stroke="url(#nn-blue)"
-        stroke-width="0.9"
-        opacity="0.55"/>
-
-  <!-- Stylized "N" mark -->
-  <path d="M10.5 22.5 L10.5 9.5 L13 9.5 L21.5 19 L21.5 9.5 L24 9.5 L24 22.5 L21.5 22.5 L13 13 L13 22.5 Z"
-        fill="url(#nn-blue)"
-        filter="url(#nn-glow)"/>
-
-  <!-- Gold data node -->
-  <circle cx="24" cy="9" r="2.6" fill="none" stroke="#fbbf24" stroke-width="0.35" opacity="0.5"/>
-  <circle cx="24" cy="9" r="1.55" fill="url(#nn-gold)"/>
-
-  <!-- Ticker bar -->
-  <rect x="2" y="26.6" width="28" height="0.9" fill="url(#nn-blue)" opacity="0.6"/>
-  <rect x="2" y="26.6" width="9" height="0.9" fill="url(#nn-gold)"/>
+  <path
+    d="M17 46V18H22.2L37 34.2V18H43V46H37.8L23 29.8V46H17Z"
+    fill="url(#nn-mark)"
+  />
+  <rect x="39.5" y="16.2" width="7" height="7" fill="#f59e0b" stroke="#fde68a" stroke-width="0.8"/>
 </svg>

@@ -21,11 +21,11 @@ export function NewsletterForm({ variant = "footer" }: Props) {
         role="status"
         className={
           variant === "article"
-            ? "text-sm text-gold-400 font-mono text-center sm:text-left"
-            : "text-sm text-gold-400 font-mono"
+            ? "text-sm text-gold-600 font-mono text-center sm:text-left"
+            : "text-sm text-gold-600 font-mono"
         }
       >
-        You&apos;re subscribed. Thanks — we&apos;ll keep you posted.
+        You&apos;re subscribed. Thanks - the next brief is on the way.
       </p>
     );
   }
@@ -34,7 +34,7 @@ export function NewsletterForm({ variant = "footer" }: Props) {
     return (
       <form
         onSubmit={handleSubmit}
-        className="md:col-span-2 flex flex-col gap-2"
+        className="md:col-span-2 flex flex-col gap-3"
       >
         <input
           type="email"
@@ -43,11 +43,11 @@ export function NewsletterForm({ variant = "footer" }: Props) {
           autoComplete="email"
           placeholder="you@wallet.eth"
           aria-label="Email address"
-          className="w-full px-4 py-3 bg-ink-950/70 border border-ink-700 focus:border-gold-400/70 focus:outline-none rounded-sm text-sm text-parchment placeholder:text-slate-600 font-mono"
+          className="w-full border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 shadow-[0_14px_32px_-28px_rgba(15,23,42,0.16)] outline-none placeholder:text-slate-400 focus:border-gold-300 focus:ring-4 focus:ring-gold-100 font-mono"
         />
         <button
           type="submit"
-          className="w-full px-4 py-3 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
+          className="w-full bg-slate-950 px-4 py-3.5 text-xs font-extrabold uppercase tracking-[0.22em] text-white transition-colors hover:bg-gold-500"
         >
           Subscribe
         </button>
@@ -56,7 +56,7 @@ export function NewsletterForm({ variant = "footer" }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
         type="email"
         name="email"
@@ -64,11 +64,11 @@ export function NewsletterForm({ variant = "footer" }: Props) {
         autoComplete="email"
         placeholder="you@wallet.eth"
         aria-label="Email address"
-        className="px-4 py-2.5 bg-ink-900 border border-ink-700 rounded-sm text-sm text-parchment placeholder:text-slate-600 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/40 font-mono"
+        className="border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-gold-300 focus:ring-4 focus:ring-gold-100 font-mono"
       />
       <button
         type="submit"
-        className="px-4 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors"
+        className="bg-slate-950 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.22em] text-white transition-colors hover:bg-gold-500"
       >
         Subscribe
       </button>

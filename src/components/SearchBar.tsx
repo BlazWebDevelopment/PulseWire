@@ -16,10 +16,10 @@ export function SearchBar({ onClose }: { onClose?: () => void }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row sm:items-center">
       <div className="relative flex-1">
         <svg
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500"
+          className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -35,14 +35,14 @@ export function SearchBar({ onClose }: { onClose?: () => void }) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search collections, tokens, authors..."
-          className="w-full pl-10 pr-4 py-2.5 bg-ink-900 border border-ink-700 rounded-sm text-sm text-parchment placeholder:text-slate-600 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/40 font-mono"
+          placeholder="Search markets, protocols, authors..."
+          className="w-full border border-slate-200 bg-white px-12 py-3.5 text-sm text-slate-900 shadow-[0_14px_32px_-28px_rgba(15,23,42,0.16)] outline-none placeholder:text-slate-400 focus:border-gold-300 focus:ring-4 focus:ring-gold-100 font-mono"
           autoFocus
         />
       </div>
       <button
         type="submit"
-        className="px-5 py-2.5 bg-gold-400 hover:bg-gold-300 text-white text-xs font-extrabold uppercase tracking-[0.22em] rounded-sm transition-colors shrink-0"
+        className="shrink-0 bg-slate-950 px-5 py-3.5 text-xs font-extrabold uppercase tracking-[0.22em] text-white transition-colors hover:bg-gold-500"
       >
         Search
       </button>
@@ -50,7 +50,7 @@ export function SearchBar({ onClose }: { onClose?: () => void }) {
         <button
           type="button"
           onClick={onClose}
-          className="p-2.5 text-slate-500 hover:text-gold-400 transition-colors"
+          className="self-end p-2.5 text-slate-500 transition-colors hover:text-gold-500 sm:self-auto"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

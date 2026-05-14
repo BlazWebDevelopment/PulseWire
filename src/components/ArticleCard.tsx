@@ -12,31 +12,33 @@ function formatDate(dateStr: string) {
 export function ArticleCardLarge({ article }: { article: Article }) {
   return (
     <Link href={`/article/${article.slug}`} className="group block">
-      <article className="relative overflow-hidden rounded-sm bg-ink-900 aspect-[16/10] ring-1 ring-ink-700/80 shadow-xl shadow-black/60 transition-all hover:ring-gold-400/50">
+      <article className="relative aspect-[16/10] overflow-hidden border border-slate-200 bg-white shadow-[0_20px_48px_-34px_rgba(15,23,42,0.28)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-[0_26px_56px_-34px_rgba(37,99,235,0.18)]">
         <img
           src={getArticleImageUrl(article, 800, 500)}
           alt={article.title}
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-70 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500"
+          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-        <div className="absolute top-4 left-4">
-          <span className="inline-block px-2.5 py-1 bg-black/80 backdrop-blur border border-gold-400/50 text-gold-400 text-[10px] font-bold uppercase tracking-[0.18em] rounded-sm font-mono">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,250,252,0.06),rgba(15,23,42,0.18)_45%,rgba(255,255,255,0.97)_100%)]" />
+        <div className="absolute left-5 top-5">
+          <span className="inline-flex border border-white/70 bg-white/88 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold-600 shadow-sm backdrop-blur font-mono">
             {article.category}
           </span>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 group-hover:text-gold-400 transition-colors leading-tight tracking-tight">
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+          <div className="max-w-2xl border border-white/80 bg-white/88 p-5 shadow-[0_16px_36px_-28px_rgba(15,23,42,0.28)] backdrop-blur-md sm:p-6">
+            <h2 className="mb-2 text-xl font-black leading-tight tracking-tight text-slate-950 transition-colors group-hover:text-gold-500 sm:text-2xl lg:text-3xl">
             {article.title}
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base line-clamp-2 mb-3">
+            <p className="mb-3 line-clamp-2 text-sm text-slate-600 sm:text-base">
             {article.excerpt}
           </p>
-          <div className="flex items-center gap-3 text-[11px] text-slate-500 font-mono uppercase tracking-wider">
-            <span className="font-medium text-slate-300">{article.author}</span>
-            <span className="text-ink-700">//</span>
+            <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-wider text-slate-500">
+            <span className="font-medium text-slate-700">{article.author}</span>
+            <span className="text-slate-300">//</span>
             <span>{formatDate(article.publishedAt)}</span>
-            <span className="text-ink-700">//</span>
+            <span className="text-slate-300">//</span>
             <span>{article.readTime} min</span>
+            </div>
           </div>
         </div>
       </article>
@@ -47,24 +49,27 @@ export function ArticleCardLarge({ article }: { article: Article }) {
 export function ArticleCardMedium({ article }: { article: Article }) {
   return (
     <Link href={`/article/${article.slug}`} className="group block">
-      <article className="flex gap-4 py-4">
-        <div className="shrink-0 w-28 h-28 sm:w-36 sm:h-28 rounded-sm overflow-hidden ring-1 ring-ink-700/80 group-hover:ring-gold-400/40 transition-colors">
+      <article className="flex gap-4 border border-slate-200 bg-white p-4 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.22)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-gold-200 group-hover:shadow-[0_20px_46px_-34px_rgba(37,99,235,0.16)]">
+        <div className="h-28 w-28 shrink-0 overflow-hidden border border-slate-200 bg-slate-50 sm:h-28 sm:w-36">
           <img
             src={getArticleImageUrl(article, 300, 300)}
             alt={article.title}
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
           />
         </div>
         <div className="flex flex-col justify-center min-w-0">
-          <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.18em] mb-1 font-mono">
+          <span className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold-500 font-mono">
             {article.category}
           </span>
-          <h3 className="text-base font-bold text-slate-100 group-hover:text-gold-400 transition-colors line-clamp-2 mb-1.5 leading-snug">
+          <h3 className="mb-1.5 line-clamp-2 text-base font-bold leading-snug text-slate-950 transition-colors group-hover:text-gold-500">
             {article.title}
           </h3>
-          <div className="flex items-center gap-2 text-[11px] text-slate-500 font-mono uppercase tracking-wider">
+          <p className="mb-2 line-clamp-2 text-sm text-slate-600">
+            {article.excerpt}
+          </p>
+          <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-slate-500">
             <span>{article.author}</span>
-            <span className="text-ink-700">//</span>
+            <span className="text-slate-300">//</span>
             <span>{formatDate(article.publishedAt)}</span>
           </div>
         </div>
@@ -76,28 +81,28 @@ export function ArticleCardMedium({ article }: { article: Article }) {
 export function ArticleCardVertical({ article }: { article: Article }) {
   return (
     <Link href={`/article/${article.slug}`} className="group block">
-      <article>
-        <div className="aspect-[16/10] rounded-sm overflow-hidden mb-3 ring-1 ring-ink-700/80 bg-ink-900 group-hover:ring-gold-400/40 transition-colors">
+      <article className="overflow-hidden border border-slate-200 bg-white p-3 shadow-[0_18px_40px_-34px_rgba(15,23,42,0.22)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-gold-200 group-hover:shadow-[0_24px_48px_-34px_rgba(37,99,235,0.16)]">
+        <div className="mb-4 aspect-[16/10] overflow-hidden border border-slate-200 bg-slate-50">
           <img
             src={getArticleImageUrl(article, 600, 375)}
             alt={article.title}
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.18em] font-mono">
+        <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-500 font-mono">
           {article.category}
         </span>
-        <h3 className="text-lg font-bold text-slate-100 group-hover:text-gold-400 transition-colors line-clamp-2 mt-1 mb-2 leading-snug">
+        <h3 className="mt-1 mb-2 line-clamp-2 text-lg font-bold leading-snug text-slate-950 transition-colors group-hover:text-gold-500">
           {article.title}
         </h3>
-        <p className="text-sm text-slate-400 line-clamp-2 mb-2">
+        <p className="mb-3 line-clamp-2 text-sm text-slate-600">
           {article.excerpt}
         </p>
-        <div className="flex items-center gap-2 text-[11px] text-slate-500 font-mono uppercase tracking-wider">
-          <span className="font-medium text-slate-400">{article.author}</span>
-          <span className="text-ink-700">//</span>
+        <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-slate-500">
+          <span className="font-medium text-slate-700">{article.author}</span>
+          <span className="text-slate-300">//</span>
           <span>{formatDate(article.publishedAt)}</span>
-          <span className="text-ink-700">//</span>
+          <span className="text-slate-300">//</span>
           <span>{article.readTime}m</span>
         </div>
       </article>
@@ -108,20 +113,20 @@ export function ArticleCardVertical({ article }: { article: Article }) {
 export function ArticleCardCompact({ article, index }: { article: Article; index: number }) {
   return (
     <Link href={`/article/${article.slug}`} className="group block">
-      <article className="flex items-start gap-4 py-4">
-        <span className="text-3xl font-black text-ink-700 group-hover:text-gold-400 transition-colors leading-none shrink-0 w-8 text-right font-mono">
+      <article className="flex items-start gap-4 py-4 transition-colors">
+        <span className="w-9 shrink-0 text-right font-mono text-3xl font-black leading-none text-slate-300 transition-colors group-hover:text-gold-400">
           {String(index + 1).padStart(2, "0")}
         </span>
         <div className="min-w-0">
-          <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.18em] font-mono">
+          <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-500 font-mono">
             {article.category}
           </span>
-          <h3 className="text-sm font-bold text-slate-100 group-hover:text-gold-400 transition-colors line-clamp-2 mt-0.5 leading-snug">
+          <h3 className="mt-0.5 line-clamp-2 text-sm font-bold leading-snug text-slate-900 transition-colors group-hover:text-gold-500">
             {article.title}
           </h3>
-          <div className="flex items-center gap-2 text-[11px] text-slate-500 mt-1 font-mono uppercase tracking-wider">
+          <div className="mt-1 flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-slate-500">
             <span>{formatDate(article.publishedAt)}</span>
-            <span className="text-ink-700">//</span>
+            <span className="text-slate-300">//</span>
             <span>{article.readTime}m</span>
           </div>
         </div>

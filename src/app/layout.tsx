@@ -2,19 +2,19 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-
-const SITE_NAME = "News NFTs";
-const SITE_TAGLINE = "The On-Chain Newsroom";
-const SITE_TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`;
-const SITE_DESCRIPTION =
-  "News NFTs is the on-chain newsroom — daily reporting on Bitcoin, Ethereum, DeFi, NFTs, mining, markets and crypto regulation. Built for builders, traders and collectors.";
-const SITE_URL = "https://newsnfts.io";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: `%s · ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "DeFi",
     "on-chain analysis",
     "crypto markets",
-    "mining",
+    "digital assets",
     "regulation",
     "blockchain",
   ],
@@ -40,10 +40,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/icon.svg", sizes: "any" },
     ],
-    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/favicon.ico", sizes: "48x48" }],
     apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
@@ -55,9 +56,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/icon.svg",
-        width: 512,
-        height: 512,
+        url: "/newsnfts-logo.svg",
+        width: 360,
+        height: 96,
         alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
       },
     ],
@@ -66,13 +67,13 @@ export const metadata: Metadata = {
     card: "summary",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/icon.svg"],
+    images: ["/newsnfts-logo.svg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#03060d",
-  colorScheme: "dark",
+  themeColor: "#f5f9ff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
