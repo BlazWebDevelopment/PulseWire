@@ -2432,6 +2432,24 @@ export const articles: Article[] = [
     trending: true,
     tags: ["trump", "trump-token", "memecoin", "trump-mobile", "t1", "handset", "solana"],
   },
+  {
+    id: 147,
+    slug: "krypto-support-dog-statue-added-beside-trump-bitcoin-monument-in-washington",
+    title: '"Krypto" Support Dog Statue Added Beside Trump Bitcoin Monument in Washington',
+    excerpt:
+      "A year after a golden Bitcoin statue of Donald Trump drew global attention near the National Mall, organizers unveiled a companion piece—a smaller golden dog named Krypto, pitched as a symbol of loyalty amid decentralized finance.",
+    content: `<p>WASHINGTON, D.C. — One year after the controversial golden Bitcoin statue of President Donald Trump appeared near the National Mall and sparked worldwide debate, organizers have unveiled a new companion piece: a smaller golden dog sculpture named "Krypto."</p><p>The dog statue, installed beside the original monument this week, carries a plaque describing Krypto as "The supportive dog" and bears the year 2026. According to organizers connected to the crypto-art initiative, the addition symbolizes "loyalty, resilience, and unwavering support during the rise of decentralized finance."</p><p>The original Trump Bitcoin statue — depicting Trump holding a large Bitcoin coin aloft — first gained attention in 2025 after crypto investors and political activists promoted it as a tribute to what they called the "Bitcoin presidency."</p><p>Now, Krypto's arrival is being framed as a softer and more symbolic extension of the installation.</p><p>"Every larger-than-life figure needs a loyal companion," one spokesperson for the project said during the unveiling. "Krypto represents the millions of everyday supporters who stood behind the movement from the beginning."</p><p>Visitors gathered throughout the day to photograph the new addition, with many posting images of the golden retriever-like figure holding a miniature Bitcoin medallion around its neck. Social media users quickly nicknamed the sculpture "the crypto first dog."</p><p>Critics, however, dismissed the installation as another publicity stunt blending politics, celebrity culture, and speculative digital assets. Art commentators noted that Washington has recently seen a rise in provocative political sculptures and guerrilla-style installations involving Trump imagery.</p><p>Supporters argued the statue is meant to celebrate community and optimism within the cryptocurrency movement rather than politics alone.</p><p>"The dog changes the tone," said one visitor standing near the display. "It makes the monument feel less aggressive and more human."</p><p>The artists behind the project have not revealed whether additional sculptures are planned, though online speculation suggests future installations could expand the monument into a larger crypto-themed art series.</p>`,
+    category: "Crypto",
+    author: "News NFTs Desk",
+    authorRole: "News Desk",
+    publishedAt: "2026-05-15T19:30:00Z",
+    readTime: 3,
+    imageId: 5147,
+    imageUrl: "/images/Krypto.jpg",
+    featured: true,
+    trending: true,
+    tags: ["krypto", "trump", "bitcoin", "washington-dc", "statue", "crypto-art", "monument", "national-mall"],
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {
