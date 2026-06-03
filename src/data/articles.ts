@@ -2442,7 +2442,7 @@ export const articles: Article[] = [
     category: "Markets",
     author: "Maya Reyes",
     authorRole: "ETF Analyst",
-    publishedAt: "2027-04-21T14:00:00Z",
+    publishedAt: "2026-06-03T14:00:00Z",
     readTime: 7,
     imageId: 5148,
     imageUrl: "/images/vaneck-etfs.jpg",
