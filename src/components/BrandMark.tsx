@@ -4,7 +4,7 @@ type BrandMarkProps = {
   className?: string;
 };
 
-export function NewsNftsIcon({ className = "h-11 w-11" }: { className?: string }) {
+export function FinanceJoysIcon({ className = "h-11 w-11" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -14,17 +14,17 @@ export function NewsNftsIcon({ className = "h-11 w-11" }: { className?: string }
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="nn-stroke" x1="8" y1="7" x2="35" y2="37" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#93C5FD" />
-          <stop offset="100%" stopColor="#2563EB" />
+        <linearGradient id="fj-stroke" x1="11" y1="31" x2="33" y2="13" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#6EE7B7" />
+          <stop offset="100%" stopColor="#059669" />
         </linearGradient>
-        <linearGradient id="nn-panel" x1="8" y1="6" x2="35" y2="39" gradientUnits="userSpaceOnUse">
+        <linearGradient id="fj-panel" x1="8" y1="6" x2="35" y2="39" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#FFFFFF" />
-          <stop offset="100%" stopColor="#F8FBFF" />
+          <stop offset="100%" stopColor="#F4FDF8" />
         </linearGradient>
       </defs>
 
-      <rect x="2" y="2" width="40" height="40" rx="8" fill="url(#nn-panel)" />
+      <rect x="2" y="2" width="40" height="40" rx="8" fill="url(#fj-panel)" />
       <rect
         x="2.5"
         y="2.5"
@@ -35,12 +35,15 @@ export function NewsNftsIcon({ className = "h-11 w-11" }: { className?: string }
       />
 
       <path
-        d="M12.5 31.5V11.5H16L27.5 24.2V11.5H31.5V31.5H28L16.5 18.8V31.5H12.5Z"
-        fill="url(#nn-stroke)"
+        d="M11 31L19 25L25 28L33 14"
+        stroke="url(#fj-stroke)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
-        x="29.4"
-        y="10.3"
+        x="30.4"
+        y="11.3"
         width="5"
         height="5"
         fill="#F59E0B"
@@ -61,15 +64,15 @@ export function BrandMark({
   return (
     <span className={`flex items-center gap-3 ${className}`}>
       <span className="relative inline-flex items-center justify-center bg-white">
-        <NewsNftsIcon className={compact ? "h-10 w-10" : "h-11 w-11"} />
+        <FinanceJoysIcon className={compact ? "h-10 w-10" : "h-11 w-11"} />
       </span>
       <span className="flex min-w-0 flex-col leading-none">
         <span className="font-sans text-[1.35rem] font-black tracking-[-0.045em] text-slate-950 leading-none">
-          News <span className="text-gold-500">NFTs</span>
+          Finance <span className="text-gold-500">Joys</span>
         </span>
         {showTagline && (
           <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-slate-500 font-mono">
-            Bitcoin · Ethereum · DeFi
+            Markets · Investing · Crypto
           </span>
         )}
       </span>

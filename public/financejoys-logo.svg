@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 96" role="img" aria-labelledby="title desc">
+  <title id="title">Finance Joys logo</title>
+  <desc id="desc">Finance Joys wordmark with a rising market-chart icon.</desc>
+  <defs>
+    <linearGradient id="fj-mark" x1="14" y1="42" x2="44" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fj-panel" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4fdf8"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(8 18)">
+    <rect x="0" y="0" width="60" height="60" rx="10" fill="url(#fj-panel)"/>
+    <rect x="0.75" y="0.75" width="58.5" height="58.5" rx="9.25" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path
+      d="M14 42L24 34L30 37L44 16"
+      fill="none"
+      stroke="url(#fj-mark)"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <rect x="40.5" y="13" width="6.5" height="6.5" fill="#f59e0b" stroke="#fde68a" stroke-width="0.8"/>
+  </g>
+
+  <g transform="translate(86 0)">
+    <text
+      x="0"
+      y="50"
+      fill="#0f172a"
+      font-size="40"
+      font-weight="900"
+      font-family="Inter, ui-sans-serif, system-ui, sans-serif"
+      letter-spacing="-1.8"
+    >
+      Finance
+    </text>
+    <text
+      x="158"
+      y="50"
+      fill="#059669"
+      font-size="40"
+      font-weight="900"
+      font-family="Inter, ui-sans-serif, system-ui, sans-serif"
+      letter-spacing="-1.8"
+    >
+      Joys
+    </text>
+    <text
+      x="2"
+      y="72"
+      fill="#64748b"
+      font-size="10"
+      font-weight="700"
+      font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+      letter-spacing="2.6"
+    >
+      MARKETS / INVESTING / DIGITAL ASSETS
+    </text>
+  </g>
+</svg>

@@ -19,12 +19,13 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
-    "News NFTs",
+    "Finance Joys",
+    "finance news",
+    "markets",
+    "investing",
     "crypto news",
-    "NFT news",
     "Bitcoin news",
     "Ethereum news",
-    "Solana",
     "DeFi",
     "on-chain analysis",
     "crypto markets",
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/newsnfts-logo.svg",
+        url: "/financejoys-logo.svg",
         width: 360,
         height: 96,
         alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
@@ -67,12 +68,12 @@ export const metadata: Metadata = {
     card: "summary",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/newsnfts-logo.svg"],
+    images: ["/financejoys-logo.svg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5f9ff",
+  themeColor: "#f3fbf6",
   colorScheme: "light",
 };
 

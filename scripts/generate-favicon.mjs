@@ -97,10 +97,11 @@ function distanceToSegment(px, py, x1, y1, x2, y2) {
 
 function gradientColor(progress) {
   const t = Math.max(0, Math.min(1, progress));
+  // Emerald gradient: #6EE7B7 -> #059669
   return [
-    mix(147, 37, t),
-    mix(197, 99, t),
-    mix(253, 235, t),
+    mix(110, 5, t),
+    mix(231, 150, t),
+    mix(183, 105, t),
     255,
   ];
 }
@@ -165,20 +166,17 @@ function strokeCircle(cx, cy, radius, thickness, color) {
 fillRoundedRect(4, 4, 56, 56, 10, [255, 255, 255, 255], [248, 251, 255, 255]);
 strokeRoundedRect(4, 4, 56, 56, 10, 2, [203, 213, 225, 255]);
 
-const monogram = [
-  [18, 46],
-  [18, 18],
-  [22, 18],
-  [36, 33],
-  [36, 18],
-  [40, 18],
-  [40, 46],
+const chart = [
+  [16, 45],
+  [28, 36],
+  [36, 41],
+  [48, 20],
 ];
 
-drawStroke(monogram, 4.9, 0.12);
-drawStroke(monogram, 2.55, 1);
-fillRoundedRect(39, 16, 7, 7, 0, [245, 158, 11, 255]);
-strokeRoundedRect(39, 16, 7, 7, 0, 1, [253, 230, 138, 255]);
+drawStroke(chart, 5.2, 0.12);
+drawStroke(chart, 3, 1);
+fillRoundedRect(44.5, 16, 7, 7, 0, [245, 158, 11, 255]);
+strokeRoundedRect(44.5, 16, 7, 7, 0, 1, [253, 230, 138, 255]);
 
 function crc32(buffer) {
   let crc = 0xffffffff;

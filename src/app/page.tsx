@@ -56,7 +56,7 @@ export default function HomePage() {
           <div className="lg:col-span-7">
             <div className="border border-slate-200 bg-white p-8 shadow-[0_24px_55px_-42px_rgba(15,23,42,0.28)] sm:p-10">
               <span className="inline-flex border border-slate-300 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] text-slate-700 font-mono">
-                News NFTs
+                Finance Joys
               </span>
               <h1 className="mt-5 max-w-3xl font-display text-[3rem] font-bold leading-[0.96] tracking-[-0.045em] text-slate-950 sm:text-[4rem]">
                 Daily reporting on Bitcoin, Ethereum, DeFi, NFTs, and crypto markets.
@@ -84,7 +84,7 @@ export default function HomePage() {
                   Top stories
                 </p>
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.03em] text-slate-950">
-                  The latest coverage from the News NFTs desks.
+                  The latest coverage from the Finance Joys desks.
                 </h2>
               </div>
               <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
