@@ -41,12 +41,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icon.svg", sizes: "any" },
+      { url: "/favicon.ico", sizes: "64x64", type: "image/x-icon" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
     ],
-    shortcut: [{ url: "/favicon.ico", sizes: "48x48" }],
-    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/icon.svg", type: "image/svg+xml", sizes: "180x180" }],
   },
   openGraph: {
     title: SITE_TITLE,

@@ -163,7 +163,7 @@ function strokeCircle(cx, cy, radius, thickness, color) {
   }
 }
 
-fillRoundedRect(4, 4, 56, 56, 10, [255, 255, 255, 255], [248, 251, 255, 255]);
+fillRoundedRect(4, 4, 56, 56, 10, [255, 255, 255, 255], [244, 253, 248, 255]);
 strokeRoundedRect(4, 4, 56, 56, 10, 2, [203, 213, 225, 255]);
 
 const chart = [
@@ -252,7 +252,12 @@ dirEntry.writeUInt32LE(22, 12);
 const ico = Buffer.concat([icoHeader, dirEntry, png]);
 
 const root = process.cwd();
-const faviconPath = path.join(root, "src", "app", "favicon.ico");
+const faviconPaths = [
+  path.join(root, "src", "app", "favicon.ico"),
+  path.join(root, "public", "favicon.ico"),
+];
 
-fs.writeFileSync(faviconPath, ico);
-console.log(`Generated ${faviconPath}`);
+for (const faviconPath of faviconPaths) {
+  fs.writeFileSync(faviconPath, ico);
+  console.log(`Generated ${faviconPath}`);
+}
