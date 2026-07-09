@@ -2442,7 +2442,7 @@ export const articles: Article[] = [
     category: "Markets",
     author: "Helena Cross",
     authorRole: "Markets Editor",
-    publishedAt: "2026-07-08T14:00:00Z",
+    publishedAt: "2026-07-09T14:00:00Z",
     readTime: 4,
     imageId: 5147,
     imageUrl: "/images/lWqLTZa5oK.png",
